@@ -7,6 +7,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet"
 		href="{% static 'A.fonts,,_icomoon,,_style.css+fonts,,_flaticon,,_font,,_flaticon.css+css,,_tiny-slider.css+css,,_glightbox.min.css+css,,_aos.css+css,,_style.css,Mcc.CgyIJPOVwv.css.pagespeed.cf.0oKNermVIz.css' %}" />
@@ -39,7 +41,7 @@
 						<div class="d-flex">
 							<ul class="list-unstyled social me-auto">
 								<li><a href="{% url 'home:loginbase' %}" class="button" style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">LogIn</a></li>
-								<li><a href="#" class="button" style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">SignUp</a></li>
+								<li><a href="{% url 'home:signup' %}" class="button" style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">SignUp</a></li>
 								
 							</ul>
 							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block"
@@ -902,10 +904,10 @@
 				<div class="col-lg-7 text-center">
 					<div class="widget">
 						<ul class="social list-unstyled">
-							<li><a href="#"><span class="icon-facebook"></span></a></li>
-							<li><a href="#"><span class="icon-twitter"></span></a></li>
-							<li><a href="#"><span class="icon-linkedin"></span></a></li>
-							<li><a href="#"><span class="icon-youtube-play"></span></a></li>
+							<li><a href="#"><span class="fa fa-facebook"></span></a></li>
+							<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+							<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+							<li><a href="#"><span class="fa fa-youtube-play"></span></a></li>
 						</ul>
 					</div>
 					<div class="widget">
