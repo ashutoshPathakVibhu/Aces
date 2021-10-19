@@ -7,13 +7,13 @@ def index(request):
     return render(request, 'index.html')
 
 def loginbase(request):
-    return HttpResponse('<h1>Login page here </h1>')
+    return render(request,'login.html')
 
 def logout_request(request):
     return HttpResponse('<h1>logout page here </h1>')
 
 def signup(request):
-    return HttpResponse('<h1>signup page here </h1>')
+    return render(request,'register.html')
 
 def personal_profile(request):
     return HttpResponse('<h1>personal_profile page here </h1>')

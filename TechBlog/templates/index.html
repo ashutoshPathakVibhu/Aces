@@ -27,7 +27,7 @@
 			<div class="site-navigation">
 				<div class="row">
 					<div class="col-md-6 text-center order-1 order-md-2 mb-3 mb-md-0">
-						<a href="{% url 'home:index' %}" class="logo m-0 text-uppercase">MagDesign</a>
+						<a href="{% url 'home:index' %}" class="logo m-0 text-uppercase">Tech Blog</a>
 					</div>
 					<div class="col-md-3 order-3 order-md-1">
 						<form action="#" class="search-form">
@@ -38,9 +38,9 @@
 					<div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
 						<div class="d-flex">
 							<ul class="list-unstyled social me-auto">
-								<li><a href="#"><span class="icon-twitter"></span></a></li>
-								<li><a href="#"><span class="icon-facebook"></span></a></li>
-								<li><a href="#"><span class="icon-instagram"></span></a></li>
+								<li><a href="{% url 'home:loginbase' %}" class="button" style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">LogIn</a></li>
+								<li><a href="#" class="button" style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">SignUp</a></li>
+								
 							</ul>
 							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block"
 								data-toggle="collapse" data-target="#main-navbar">
@@ -52,7 +52,7 @@
 				<ul class="js-clone-nav d-none d-lg-inline-none text-start site-menu float-end">
 					<li class="active"><a href="{% url 'home:index' %}">Home</a></li>
 					<li class="has-children">
-						<a href="categories.html">Categories</a>
+						<a href="categories.html">Create Blog</a>
 						<ul class="dropdown">
 							<li><a href="#">Travel</a></li>
 							<li><a href="#">Food</a></li>
@@ -149,7 +149,7 @@
 								<div class="post-entry d-lg-flex">
 									<div class="me-lg-5 thumbnail mb-4 mb-lg-0">
 										<a href="single.html">
-											<img src="images/xpost_lg_2.jpg.pagespeed.ic.YbC8FwTKmr.jpg" alt="Image"
+											<img src="../static/images/xpost_lg_2.jpg.pagespeed.ic.YbC8FwTKmr.jpg" alt="Image"
 												class="img-fluid" data-pagespeed-url-hash="1399666466"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</a>
@@ -168,7 +168,7 @@
 										</p>
 										<a href="#" class="post-author d-flex align-items-center">
 											<div class="author-pic">
-												<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 													data-pagespeed-url-hash="1813383360"
 													onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 											</div>
@@ -185,7 +185,7 @@
 								<div class="post-entry d-lg-flex">
 									<div class="me-lg-5 thumbnail mb-4 mb-lg-0">
 										<a href="single.html">
-											<img src="images/xpost_lg_3.jpg.pagespeed.ic.qhXWgmNnIn.jpg" alt="Image"
+											<img src="../static/images/xpost_lg_3.jpg.pagespeed.ic.qhXWgmNnIn.jpg" alt="Image"
 												class="img-fluid" data-pagespeed-url-hash="1694166387"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</a>
@@ -204,7 +204,7 @@
 										</p>
 										<a href="#" class="post-author d-flex align-items-center">
 											<div class="author-pic">
-												<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 													data-pagespeed-url-hash="1813383360"
 													onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 											</div>
@@ -221,7 +221,7 @@
 								<div class="post-entry d-lg-flex">
 									<div class="me-lg-5 thumbnail mb-4 mb-lg-0">
 										<a href="single.html">
-											<img src="images/xpost_lg_4.jpg.pagespeed.ic.oJIp7wddWl.jpg" alt="Image"
+											<img src="../static/images/xpost_lg_4.jpg.pagespeed.ic.oJIp7wddWl.jpg" alt="Image"
 												class="img-fluid" data-pagespeed-url-hash="1988666308"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</a>
@@ -240,7 +240,7 @@
 										</p>
 										<a href="#" class="post-author d-flex align-items-center">
 											<div class="author-pic">
-												<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 													data-pagespeed-url-hash="1813383360"
 													onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 											</div>
@@ -266,7 +266,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="3151298507"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -283,7 +283,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -299,7 +299,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="3445798428"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -316,7 +316,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -332,7 +332,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="3740298349"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -349,7 +349,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -365,7 +365,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="3740298349"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -382,7 +382,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -398,7 +398,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_5.jpg.pagespeed.ic.aehNfINE2q.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_5.jpg.pagespeed.ic.aehNfINE2q.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="4034798270"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -415,7 +415,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -431,7 +431,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_6.jpg.pagespeed.ic.Kuzv9hw150.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_6.jpg.pagespeed.ic.Kuzv9hw150.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="34330895"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -448,7 +448,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -463,6 +463,7 @@
 			</div>
 		</div>
 	</div>
+	<!--
 	<div class="section">
 		<div class="container">
 			<div class="row justify-content-center mb-5">
@@ -481,7 +482,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_7.jpg.pagespeed.ic.w5W5PuCxbQ.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_7.jpg.pagespeed.ic.w5W5PuCxbQ.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="328830816"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -498,7 +499,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -514,7 +515,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="3151298507"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -531,7 +532,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -547,7 +548,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="3445798428"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -564,7 +565,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -580,7 +581,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="3740298349"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -597,7 +598,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -613,7 +614,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_5.jpg.pagespeed.ic.aehNfINE2q.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_5.jpg.pagespeed.ic.aehNfINE2q.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="4034798270"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -630,7 +631,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -646,7 +647,7 @@
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
 							<a href="single.html">
-								<img src="images/ximg_6.jpg.pagespeed.ic.Kuzv9hw150.jpg" alt="Image" class="img-fluid"
+								<img src="../static/images/ximg_6.jpg.pagespeed.ic.Kuzv9hw150.jpg" alt="Image" class="img-fluid"
 									data-pagespeed-url-hash="34330895"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
@@ -663,7 +664,7 @@
 								there live the blind texts.</p>
 							<a href="#" class="post-author d-flex align-items-center">
 								<div class="author-pic">
-									<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+									<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 										data-pagespeed-url-hash="1813383360"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -677,8 +678,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="section">
+	</div>-->
+	<div class="section" style="position: relative; top: -4cm;">
 		<div class="container">
 			<div class="row g-5">
 				<div class="col-lg-6">
@@ -691,7 +692,7 @@
 						<div class="col-lg-12">
 							<div class="post-entry d-md-flex xsmall-horizontal mb-5">
 								<div class="me-md-3 thumbnail mb-3 mb-md-0">
-									<img src="images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image"
+									<img src="../static/images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image"
 										class="img-fluid" data-pagespeed-url-hash="3151298507"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -705,7 +706,7 @@
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 												data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
@@ -720,7 +721,7 @@
 						<div class="col-lg-12">
 							<div class="post-entry d-md-flex xsmall-horizontal mb-5">
 								<div class="me-md-3 thumbnail mb-3 mb-md-0">
-									<img src="images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image"
+									<img src="../static/images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image"
 										class="img-fluid" data-pagespeed-url-hash="3445798428"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -734,7 +735,7 @@
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 												data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
@@ -749,7 +750,7 @@
 						<div class="col-lg-12">
 							<div class="post-entry d-md-flex xsmall-horizontal mb-5">
 								<div class="me-md-3 thumbnail mb-3 mb-md-0">
-									<img src="images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image"
+									<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image"
 										class="img-fluid" data-pagespeed-url-hash="3740298349"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -763,7 +764,7 @@
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 												data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
@@ -787,7 +788,7 @@
 						<div class="col-lg-12">
 							<div class="post-entry d-md-flex xsmall-horizontal mb-5">
 								<div class="me-md-3 thumbnail mb-3 mb-md-0">
-									<img src="images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image"
+									<img src="../static/images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image"
 										class="img-fluid" data-pagespeed-url-hash="3151298507"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -801,7 +802,7 @@
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 												data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
@@ -816,7 +817,7 @@
 						<div class="col-lg-12">
 							<div class="post-entry d-md-flex xsmall-horizontal mb-5">
 								<div class="me-md-3 thumbnail mb-3 mb-md-0">
-									<img src="images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image"
+									<img src="../static/images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image"
 										class="img-fluid" data-pagespeed-url-hash="3445798428"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -830,7 +831,7 @@
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 												data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
@@ -845,7 +846,7 @@
 						<div class="col-lg-12">
 							<div class="post-entry d-md-flex xsmall-horizontal mb-5">
 								<div class="me-md-3 thumbnail mb-3 mb-md-0">
-									<img src="images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image"
+									<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image"
 										class="img-fluid" data-pagespeed-url-hash="3740298349"
 										onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 								</div>
@@ -859,7 +860,7 @@
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
 												data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
@@ -876,7 +877,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="py-5 bg-light mx-md-3 sec-subscribe">
+	<div class="py-5 bg-light mx-md-3 sec-subscribe" style="position: relative; top: -6cm;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -895,8 +896,8 @@
 			</form>
 		</div>
 	</div>
-	<div class="site-footer">
-		<div class="container">
+	<div class="site-footer" style="position: relative; top: -7cm; height: 20px;">
+		<div class="container" style="margin-bottom: 0cm;">
 			<div class="row justify-content-center copyright">
 				<div class="col-lg-7 text-center">
 					<div class="widget">
@@ -924,7 +925,7 @@
 
 		<div id="overlayer"></div>
 		<div class="loader">
-			<div class="spinner-border" role="status">
+			<div class="spinner-border" role="status" style="color: rgb(255, 145, 0);">
 				<span class="visually-hidden">Loading...</span>
 			</div>
 		</div>
