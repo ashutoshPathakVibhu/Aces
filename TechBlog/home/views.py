@@ -15,11 +15,11 @@ def logout_request(request):
 def signup(request):
     return render(request,'register.html')
 
-def personal_profile(request):
-    return HttpResponse('<h1>personal_profile page here </h1>')
+def userProfile(request):
+    return render(request,'userProfile.html')
 
-def new_blog(request):
-    return HttpResponse('<h1>new_blog page here </h1>')
+def createBlog(request):
+    return render(request,'createBlog.html')
 
 def open_blog(request):
-    return HttpResponse('<h1>open_blog page here </h1>')
+    return render(request,'open_blog.html')

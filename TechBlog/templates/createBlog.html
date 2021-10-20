@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="{% static 'A.fonts,,_icomoon,,_style.css+fonts,,_flaticon,,_font,,_flaticon.css+css,,_tiny-slider.css+css,,_glightbox.min.css+css,,_aos.css+css,,_style.css,Mcc.CgyIJPOVwv.css.pagespeed.cf.0oKNermVIz.css' %}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/createBlog.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <title>Write Your Blog</title>
+</head>
+
+<body>
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav">
+        <div class="container">
+            <div class="site-navigation">
+                <div class="row">
+                    <div class="col-md-6 text-center order-1 order-md-2 mb-3 mb-md-0">
+                        <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase"><h1>Tech Blog</h1></a>
+                    </div>
+                    <div class="col-md-3 order-3 order-md-1">
+                        <form action="#" class="search-form">
+                            <span class="icon-search2"></span>
+                            <input type="search" class="form-control" placeholder="Search...">
+                        </form>
+                    </div>
+                    <div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
+                        <div class="d-flex">
+                            <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block"
+                                data-toggle="collapse" data-target="#main-navbar">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="js-clone-nav d-none d-lg-inline-none text-start site-menu float-end">
+                    <li class="active"><a href="{% url 'home:index' %}">Home</a></li>
+                    <li class="has-children">
+                        <a href="{%url 'home:createBlog' %}">Create Blog</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Travel</a></li>
+                            <li><a href="#">Food</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li class="has-children">
+                                <a href="#">Dropdown</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Sub Menu One</a></li>
+                                    <li><a href="#">Sub Menu Two</a></li>
+                                    <li><a href="#">Sub Menu Three</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Business</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="col-sm-12 cv-cont">
+                <div class="header row">
+                    <h2 style="color: Black; text-align:center;">Write Your Blog</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="title" placeholder="Blog Title" />
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-primary btn-file">
+                                    Browse <input type="file" name="bimgs" multiple>
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-primary btn-file">
+                                    Enter Tags
+                                </span>
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control bcontent" name="content" rows="20" cols="50"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="Submit" value="Log In"
+                            class="btn btn-primary form-control" script />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/createBlog.js' %}"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+		<script src="{% static 'js/tiny-slider.js'%}"></script>
+		<script
+			src="{% static 'js/glightbox.min.js+aos.js+navbar.js+counter.js+custom.js.pagespeed.jc.B7bFTsJZUK.js'%}"></script>
+		<script>eval(mod_pagespeed_KpCH1a$C_m);</script>
+		<script>eval(mod_pagespeed_Ej3jj9tqUo);</script>
+		<script>eval(mod_pagespeed_Pkx$Oz4Gi9);</script>
+		<script>eval(mod_pagespeed_9lpIcAXJZV);</script>
+		<script>eval(mod_pagespeed_GIrE68D1a2);</script>
+
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+
+			gtag('config', 'UA-23581568-13');
+		</script>
+		<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"rayId":"69f85ddb39d6d57f","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.9.0","si":100}'></script>
+</body>
+
+</html>
