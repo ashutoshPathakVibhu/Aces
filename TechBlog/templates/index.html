@@ -12,7 +12,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet"
 		href="{% static 'A.fonts,,_icomoon,,_style.css+fonts,,_flaticon,,_font,,_flaticon.css+css,,_tiny-slider.css+css,,_glightbox.min.css+css,,_aos.css+css,,_style.css,Mcc.CgyIJPOVwv.css.pagespeed.cf.0oKNermVIz.css' %}" />
-	<title>MagDesign &mdash; Free Bootstrap 5 Website Template by Colorlib</title>
+	<title>Tech Blog</title>
 </head>
 
 <body>
@@ -40,9 +40,16 @@
 					<div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
 						<div class="d-flex">
 							<ul class="list-unstyled social me-auto">
-								<li><a href="{% url 'home:loginbase' %}" class="button" style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">LogIn</a></li>
-								<li><a href="{% url 'home:signup' %}" class="button" style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">SignUp</a></li>
-								
+								<li><a href="{% url 'home:loginbase' %}" class="button"
+										style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">LogIn</a>
+								</li>
+								<li><a href="{% url 'home:signup' %}" class="button"
+										style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">SignUp</a>
+								</li>
+								<li><a href="{% url 'home:userProfile' %}" class="button"
+										style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">Profile</a>
+								</li>
+
 							</ul>
 							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block"
 								data-toggle="collapse" data-target="#main-navbar">
@@ -54,7 +61,7 @@
 				<ul class="js-clone-nav d-none d-lg-inline-none text-start site-menu float-end">
 					<li class="active"><a href="{% url 'home:index' %}">Home</a></li>
 					<li class="has-children">
-						<a href="categories.html">Create Blog</a>
+						<a href="{%url 'home:createBlog' %}">Create Blog</a>
 						<ul class="dropdown">
 							<li><a href="#">Travel</a></li>
 							<li><a href="#">Food</a></li>
@@ -92,7 +99,7 @@
 							<div class="item">
 								<div class="post-entry d-lg-flex">
 									<div class="me-lg-5 thumbnail mb-4 mb-lg-0">
-										<a href="single.html">
+										<a href="{% url 'home:open_blog' %}">
 											<script data-pagespeed-no-defer>//<![CDATA[
 												(function () {
 													for (var g = "function" == typeof Object.defineProperties ? Object.defineProperty : function (b, c, a) { if (a.get || a.set) throw new TypeError("ES3 does not support getters and setters."); b != Array.prototype && b != Object.prototype && (b[c] = a.value) }, h = "undefined" != typeof window && window === this ? this : "undefined" != typeof global && null != global ? global : this, k = ["String", "prototype", "repeat"], l = 0; l < k.length - 1; l++) { var m = k[l]; m in h || (h[m] = {}); h = h[m] }
@@ -126,7 +133,7 @@
 												class="category">Travel</a> &mdash;
 											<span class="date">July 2, 2020</span>
 										</div>
-										<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+										<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 												greatest source of learning.</a></h2>
 										<p>Far far away, behind the word mountains, far from the countries Vokalia and
 											Consonantia, there live the blind texts. Separated they live in
@@ -134,8 +141,8 @@
 										</p>
 										<a href="#" class="post-author d-flex align-items-center">
 											<div class="author-pic">
-												<img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg'%}" alt="Image"
-													data-pagespeed-url-hash="1813383360"
+												<img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg'%}"
+													alt="Image" data-pagespeed-url-hash="1813383360"
 													onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 											</div>
 											<div class="text">
@@ -150,9 +157,9 @@
 							<div class="item">
 								<div class="post-entry d-lg-flex">
 									<div class="me-lg-5 thumbnail mb-4 mb-lg-0">
-										<a href="single.html">
-											<img src="../static/images/xpost_lg_2.jpg.pagespeed.ic.YbC8FwTKmr.jpg" alt="Image"
-												class="img-fluid" data-pagespeed-url-hash="1399666466"
+										<a href="% url 'home:open_blog' %}">
+											<img src="../static/images/xpost_lg_2.jpg.pagespeed.ic.YbC8FwTKmr.jpg"
+												alt="Image" class="img-fluid" data-pagespeed-url-hash="1399666466"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</a>
 									</div>
@@ -162,7 +169,7 @@
 												class="category">Travel</a> &mdash;
 											<span class="date">July 2, 2020</span>
 										</div>
-										<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+										<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 												greatest source of learning.</a></h2>
 										<p>Far far away, behind the word mountains, far from the countries Vokalia and
 											Consonantia, there live the blind texts. Separated they live in
@@ -170,8 +177,8 @@
 										</p>
 										<a href="#" class="post-author d-flex align-items-center">
 											<div class="author-pic">
-												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-													data-pagespeed-url-hash="1813383360"
+												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+													alt="Image" data-pagespeed-url-hash="1813383360"
 													onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 											</div>
 											<div class="text">
@@ -186,9 +193,9 @@
 							<div class="item">
 								<div class="post-entry d-lg-flex">
 									<div class="me-lg-5 thumbnail mb-4 mb-lg-0">
-										<a href="single.html">
-											<img src="../static/images/xpost_lg_3.jpg.pagespeed.ic.qhXWgmNnIn.jpg" alt="Image"
-												class="img-fluid" data-pagespeed-url-hash="1694166387"
+										<a href="{% url 'home:open_blog' %}">
+											<img src="../static/images/xpost_lg_3.jpg.pagespeed.ic.qhXWgmNnIn.jpg"
+												alt="Image" class="img-fluid" data-pagespeed-url-hash="1694166387"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</a>
 									</div>
@@ -198,7 +205,7 @@
 												class="category">Travel</a> &mdash;
 											<span class="date">July 2, 2020</span>
 										</div>
-										<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+										<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 												greatest source of learning.</a></h2>
 										<p>Far far away, behind the word mountains, far from the countries Vokalia and
 											Consonantia, there live the blind texts. Separated they live in
@@ -206,8 +213,8 @@
 										</p>
 										<a href="#" class="post-author d-flex align-items-center">
 											<div class="author-pic">
-												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-													data-pagespeed-url-hash="1813383360"
+												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+													alt="Image" data-pagespeed-url-hash="1813383360"
 													onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 											</div>
 											<div class="text">
@@ -222,9 +229,9 @@
 							<div class="item">
 								<div class="post-entry d-lg-flex">
 									<div class="me-lg-5 thumbnail mb-4 mb-lg-0">
-										<a href="single.html">
-											<img src="../static/images/xpost_lg_4.jpg.pagespeed.ic.oJIp7wddWl.jpg" alt="Image"
-												class="img-fluid" data-pagespeed-url-hash="1988666308"
+										<a href="% url 'home:open_blog' %}">
+											<img src="../static/images/xpost_lg_4.jpg.pagespeed.ic.oJIp7wddWl.jpg"
+												alt="Image" class="img-fluid" data-pagespeed-url-hash="1988666308"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</a>
 									</div>
@@ -234,7 +241,7 @@
 												class="category">Travel</a> &mdash;
 											<span class="date">July 2, 2020</span>
 										</div>
-										<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+										<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 												greatest source of learning.</a></h2>
 										<p>Far far away, behind the word mountains, far from the countries Vokalia and
 											Consonantia, there live the blind texts. Separated they live in
@@ -242,8 +249,8 @@
 										</p>
 										<a href="#" class="post-author d-flex align-items-center">
 											<div class="author-pic">
-												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-													data-pagespeed-url-hash="1813383360"
+												<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+													alt="Image" data-pagespeed-url-hash="1813383360"
 													onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 											</div>
 											<div class="text">
@@ -267,9 +274,9 @@
 				<div class="col-lg-4">
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
-							<a href="single.html">
-								<img src="../static/images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid"
-									data-pagespeed-url-hash="3151298507"
+							<a href="{% url 'home:open_blog' %}">
+								<img src="../static/images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image"
+									class="img-fluid" data-pagespeed-url-hash="3151298507"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
 						</div>
@@ -279,7 +286,7 @@
 								&mdash;
 								<span class="date">July 2, 2020</span>
 							</div>
-							<h2 class="heading mb-3"><a href="single.html">Your most unhappy customers are your greatest
+							<h2 class="heading mb-3"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your greatest
 									source of learning.</a></h2>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 								there live the blind texts.</p>
@@ -300,9 +307,9 @@
 				<div class="col-lg-4">
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
-							<a href="single.html">
-								<img src="../static/images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image" class="img-fluid"
-									data-pagespeed-url-hash="3445798428"
+							<a href="{% url 'home:open_blog' %}">
+								<img src="../static/images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image"
+									class="img-fluid" data-pagespeed-url-hash="3445798428"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
 						</div>
@@ -312,7 +319,7 @@
 								&mdash;
 								<span class="date">July 2, 2020</span>
 							</div>
-							<h2 class="heading mb-3"><a href="single.html">Your most unhappy customers are your greatest
+							<h2 class="heading mb-3"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your greatest
 									source of learning.</a></h2>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 								there live the blind texts.</p>
@@ -333,9 +340,9 @@
 				<div class="col-lg-4">
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
-							<a href="single.html">
-								<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid"
-									data-pagespeed-url-hash="3740298349"
+							<a href="{% url 'home:open_blog' %}">
+								<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image"
+									class="img-fluid" data-pagespeed-url-hash="3740298349"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
 						</div>
@@ -366,9 +373,9 @@
 				<div class="col-lg-4">
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
-							<a href="single.html">
-								<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid"
-									data-pagespeed-url-hash="3740298349"
+							<a href="{% url 'home:open_blog' %}">
+								<img src="../static/images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image"
+									class="img-fluid" data-pagespeed-url-hash="3740298349"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
 						</div>
@@ -399,9 +406,9 @@
 				<div class="col-lg-4">
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
-							<a href="single.html">
-								<img src="../static/images/ximg_5.jpg.pagespeed.ic.aehNfINE2q.jpg" alt="Image" class="img-fluid"
-									data-pagespeed-url-hash="4034798270"
+							<a href="{% url 'home:open_blog' %}">
+								<img src="../static/images/ximg_5.jpg.pagespeed.ic.aehNfINE2q.jpg" alt="Image"
+									class="img-fluid" data-pagespeed-url-hash="4034798270"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
 						</div>
@@ -432,9 +439,9 @@
 				<div class="col-lg-4">
 					<div class="post-entry d-block small-post-entry-v">
 						<div class="thumbnail">
-							<a href="single.html">
-								<img src="../static/images/ximg_6.jpg.pagespeed.ic.Kuzv9hw150.jpg" alt="Image" class="img-fluid"
-									data-pagespeed-url-hash="34330895"
+							<a href="{% url 'home:open_blog' %}">
+								<img src="../static/images/ximg_6.jpg.pagespeed.ic.Kuzv9hw150.jpg" alt="Image"
+									class="img-fluid" data-pagespeed-url-hash="34330895"
 									onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 							</a>
 						</div>
@@ -704,12 +711,12 @@
 											class="category">Travel</a> &mdash;
 										<span class="date">July 2, 2020</span>
 									</div>
-									<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+									<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-												data-pagespeed-url-hash="1813383360"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+												alt="Image" data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
 										<div class="text">
@@ -733,12 +740,12 @@
 											class="category">Travel</a> &mdash;
 										<span class="date">July 2, 2020</span>
 									</div>
-									<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+									<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-												data-pagespeed-url-hash="1813383360"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+												alt="Image" data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
 										<div class="text">
@@ -762,12 +769,12 @@
 											class="category">Travel</a> &mdash;
 										<span class="date">July 2, 2020</span>
 									</div>
-									<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+									<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-												data-pagespeed-url-hash="1813383360"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+												alt="Image" data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
 										<div class="text">
@@ -800,12 +807,12 @@
 											class="category">Travel</a> &mdash;
 										<span class="date">July 2, 2020</span>
 									</div>
-									<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+									<h2 class="heading"><a href="% url 'home:open_blog' %}>Your most unhappy customers are your
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-												data-pagespeed-url-hash="1813383360"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+												alt="Image" data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
 										<div class="text">
@@ -829,12 +836,12 @@
 											class="category">Travel</a> &mdash;
 										<span class="date">July 2, 2020</span>
 									</div>
-									<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+									<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-												data-pagespeed-url-hash="1813383360"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+												alt="Image" data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
 										<div class="text">
@@ -858,12 +865,12 @@
 											class="category">Travel</a> &mdash;
 										<span class="date">July 2, 2020</span>
 									</div>
-									<h2 class="heading"><a href="single.html">Your most unhappy customers are your
+									<h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are your
 											greatest source of learning.</a></h2>
 									<a href="#" class="post-author d-flex align-items-center">
 										<div class="author-pic">
-											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image"
-												data-pagespeed-url-hash="1813383360"
+											<img src="../static/images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg"
+												alt="Image" data-pagespeed-url-hash="1813383360"
 												onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 										</div>
 										<div class="text">
