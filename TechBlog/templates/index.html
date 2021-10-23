@@ -40,12 +40,14 @@
 					<div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
 						<div class="d-flex">
 							<ul class="list-unstyled social me-auto">
+								{% if not request.user.is_authenticated %}
 								<li><a href="{% url 'home:loginbase' %}" class="button"
 										style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">LogIn</a>
 								</li>
-								<li><a href="{% url 'home:signup' %}" class="button"
+								<li><a href="{% url 'users:signup' %}" class="button"
 										style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">SignUp</a>
 								</li>
+								{% endif %}
 								<li><a href="{% url 'home:userProfile' %}" class="button"
 										style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">Profile</a>
 								</li>
