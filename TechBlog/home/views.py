@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
-
+from users.models import Profile
 
 # Create your views here.
 def index(request):
@@ -24,7 +24,6 @@ def login(request):
             return render(request,'login.html')
 
     else:
-        messages.error(request,'GETTTTTTTTTTT')
         return render(request,'login.html')
 
 def logout(request):
@@ -35,7 +34,15 @@ def signup(request):
     return render(request,'register.html')
 
 def userProfile(request):
-    return render(request,'userProfile.html')
+    if request.user.is_authenticated:
+        us = request.user
+        profile = Profile.objects.get(user = us)
+        first_name = profile.first_name
+        last_name = profile.last_name
+        pic = profile.image
+        return render(request,'userProfile.html',{'first_name':first_name,'last_name':last_name,'image':pic})
+    else:
+        return render(request,'login.html')
 
 def createBlog(request):
     return render(request,'createBlog.html')

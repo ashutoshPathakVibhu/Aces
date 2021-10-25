@@ -82,7 +82,7 @@
     <div class="container">
       <div class="col-sm-12 cv-cont">
         <div class="header row">
-          <h2>Jimmy Anderson</h2>
+          <h2>{{first_name}} {{last_name}}</h2>
         </div>
 
         <div class="tab-content" id="nav-tabContent">
@@ -95,7 +95,7 @@
                   <div class="cvp">
                     <h6>General Information</h6>
                     <b>Name</b>
-                    <p>Jimmy Anderson</p>
+                    <p>{{first_name}} {{last_name}}</p>
                     <b>Date of Birth</b>
                     <p>9-06-1989</p>
                     <b>Address</b>
@@ -110,7 +110,7 @@
               <div class="col-md-8">
                 <div class="cv-stail row">
                   <div class="col-sm-4 vbhfg center">
-                    <img src="{% static 'images/profile.jpg' %}" alt=""> <br>
+                    <img src="{{ user.profile.image.url }}" alt=""> <br>
                   </div>
                   <div class="col-sm-8">
                     <h3>Hire Me for Your Next Project</h3>
