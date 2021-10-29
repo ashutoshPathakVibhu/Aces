@@ -114,9 +114,9 @@
                     <p class="lead mb-4 text-center">Far far away, behind the word mountains, far from the countries
                         Vokalia and Consonantia, there live the blind texts.</p>
                     <img src="{{blog.image.url}}" alt="Image"
-                        class="img-fluid rounded mb-4" data-pagespeed-url-hash="3151298507"
+                        class="img-fluid rounded mb-4 justify-content-center " data-pagespeed-url-hash="3151298507"
                         onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <p>{{blog.content}}</p>
+                    <p>{{ blog.content |safe }}</p>
                     <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
                         is a paradisematic country, in which roasted parts of sentences fly into your mouth.
                     </p>

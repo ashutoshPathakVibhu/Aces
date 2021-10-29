@@ -10,11 +10,8 @@ def register(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
             form = UserRegisterForm(request.POST,request.FILES)
-            print("hi")
-            print(form)
             if form.is_valid():
                 form.save()
-                print("hello")
                 return redirect('home:userProfile')
         else:
             form = UserRegisterForm()
