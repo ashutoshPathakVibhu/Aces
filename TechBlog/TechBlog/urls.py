@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls'),name='home'),
     path('account/',include('users.urls'),name='user'),
+    path('blogs/',include('blogs.urls'),name='blogs'),
 ]
 if True:
     urlpatterns += static(settings.STATIC_URL,

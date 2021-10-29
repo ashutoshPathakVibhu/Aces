@@ -141,11 +141,45 @@
               <div class="jumbo-address row">
                 <div class="row w-100 no-margin">
                   <div class="row no-margin gallery">
+                    {% for blog in blogs %}
                     <div class="col-sm-4 wrapper">
+                      <div class="container">
+                        <div class="row">
+                          <div class="">
+                            <div class="card">
+                              <img class="card-img"
+                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg"
+                                alt="Bologna">
+                              <!-- <div class="card-img-ov">
+                                <a href="#" class="btn btn-light btn-sm">Cooking</a>
+                              </div> -->
+                              <div class="card-body">
+                                <h4 class="card-title">{{blog.title}}</h4>
+                                <small class="text-muted cat">
+                                  <i class="far fa-clock text-info"></i> 30 minutes
+                                  <i class="fas fa-users text-info"></i> 4 portions
+                                </small>
+                                <p class="card-text">{{blog.content|striptags|safe|truncatewords_html:15}}
+                                </p>
+                                <a href="{% url 'blogs:blog_detail' slug=blog.slug %}" class="btn btn-info">Read Recipe</a>
+                              </div>
+                              <div
+                                class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                                <div class="views">{{blog.date}}
+                                </div>
+                                <div class="stats">
+                                  <i class="far fa-eye"></i> 1347
+                                  <i class="far fa-comment"></i> 12
+                                </div>
 
-
-
-
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-sm-4 wrapper">
                       <div class="container">
                         <div class="row">
                           <div class="">
@@ -180,59 +214,10 @@
                           </div>
                         </div>
                       </div>
-                      <!-- <img src="assets/images/gallery/gallery_01.jpg" alt=""> -->
-
-
-
-
-
-
                     </div>
+
+
                     <div class="col-sm-4 wrapper">
-
-
-                      <div class="container">
-                        <div class="row">
-                          <div class="">
-                            <div class="card">
-                              <img class="card-img"
-                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg"
-                                alt="Bologna">
-                              <div class="card-img-overlay">
-                                <a href="#" class="btn btn-light btn-sm">Cooking</a>
-                              </div>
-                              <div class="card-body">
-                                <h4 class="card-title">Pasta with Prosciutto</h4>
-                                <small class="text-muted cat">
-                                  <i class="far fa-clock text-info"></i> 30 minutes
-                                  <i class="fas fa-users text-info"></i> 4 portions
-                                </small>
-                                <p class="card-text">I love quick, simple pasta dishes, and this is one of my favorite.
-                                </p>
-                                <a href="#" class="btn btn-info">Read Recipe</a>
-                              </div>
-                              <div
-                                class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-                                <div class="views">Oct 20, 12:45PM
-                                </div>
-                                <div class="stats">
-                                  <i class="far fa-eye"></i> 1347
-                                  <i class="far fa-comment"></i> 12
-                                </div>
-
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <!-- <img src="assets/images/gallery/gallery_02.jpg" alt=""> -->
-                    </div>
-                    <div class="col-sm-4 wrapper">
-
-
-
                       <div class="container">
                         <div class="row">
                           <div class="">
