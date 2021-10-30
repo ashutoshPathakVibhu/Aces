@@ -1,410 +1,271 @@
+{% extends 'base.html' %}
+
+{% block title %}
+| Blog_Detail
+{% endblock %}
+{% block content %}
+
 {% load static %}
-<!doctype html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="{% static 'A.fonts,,_icomoon,,_style.css+fonts,,_flaticon,,_font,,_flaticon.css+css,,_tiny-slider.css+css,,_glightbox.min.css+css,,_aos.css+css,,_style.css,Mcc.CgyIJPOVwv.css.pagespeed.cf.0oKNermVIz.css' %}" />
-    <title>MagDesign &mdash; Free Bootstrap 5 Website Template by Colorlib</title>
-</head>
-
-<body>
-    <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close">
-                <span class="icofont-close js-menu-toggle"></span>
-            </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-    </div>
-    <nav class="site-nav">
-        <div class="container">
-            <div class="site-navigation">
-                <div class="row">
-                    <div class="col-md-6 text-center order-1 order-md-2 mb-3 mb-md-0">
-                        <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase">MagDesign</a>
-                    </div>
-                    <div class="col-md-3 order-3 order-md-1">
-                        <form action="#" class="search-form">
-                            <span class="icon-search2"></span>
-                            <input type="search" class="form-control" placeholder="Search...">
-                        </form>
-                    </div>
-                    <div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
-                        <div class="d-flex">
-                            <ul class="list-unstyled social me-auto">
-                                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            </ul>
-                            <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block"
-                                data-toggle="collapse" data-target="#main-navbar">
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="js-clone-nav d-none d-lg-inline-none text-start site-menu float-end">
-                    <li class="active"><a href="{% url 'home:index' %}">Home</a></li>
-                    <li class="has-children">
-                        <a href="{% url 'home:createBlog' %}">Create Blog</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Technology</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li class="has-children">
-                                <a href="#">Dropdown</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Sub Menu One</a></li>
-                                    <li><a href="#">Sub Menu Two</a></li>
-                                    <li><a href="#">Sub Menu Three</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Business</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="section post-section pt-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center">
-                        <script data-pagespeed-no-defer>//<![CDATA[
-                            (function () {
-                                for (var g = "function" == typeof Object.defineProperties ? Object.defineProperty : function (b, c, a) { if (a.get || a.set) throw new TypeError("ES3 does not support getters and setters."); b != Array.prototype && b != Object.prototype && (b[c] = a.value) }, h = "undefined" != typeof window && window === this ? this : "undefined" != typeof global && null != global ? global : this, k = ["String", "prototype", "repeat"], l = 0; l < k.length - 1; l++) { var m = k[l]; m in h || (h[m] = {}); h = h[m] }
-                                var n = k[k.length - 1], p = h[n], q = p ? p : function (b) { var c; if (null == this) throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined"); c = this + ""; if (0 > b || 1342177279 < b) throw new RangeError("Invalid count value"); b |= 0; for (var a = ""; b;)if (b & 1 && (a += c), b >>>= 1) c += c; return a }; q != p && null != q && g(h, n, { configurable: !0, writable: !0, value: q }); var t = this;
-                                function u(b, c) { var a = b.split("."), d = t; a[0] in d || !d.execScript || d.execScript("var " + a[0]); for (var e; a.length && (e = a.shift());)a.length || void 0 === c ? d[e] ? d = d[e] : d = d[e] = {} : d[e] = c }; function v(b) { var c = b.length; if (0 < c) { for (var a = Array(c), d = 0; d < c; d++)a[d] = b[d]; return a } return [] }; function w(b) { var c = window; if (c.addEventListener) c.addEventListener("load", b, !1); else if (c.attachEvent) c.attachEvent("onload", b); else { var a = c.onload; c.onload = function () { b.call(this); a && a.call(this) } } }; var x; function y(b, c, a, d, e) { this.h = b; this.j = c; this.l = a; this.f = e; this.g = { height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight, width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth }; this.i = d; this.b = {}; this.a = []; this.c = {} }
-                                function z(b, c) {
-                                    var a, d, e = c.getAttribute("data-pagespeed-url-hash"); if (a = e && !(e in b.c)) if (0 >= c.offsetWidth && 0 >= c.offsetHeight) a = !1; else { d = c.getBoundingClientRect(); var f = document.body; a = d.top + ("pageYOffset" in window ? window.pageYOffset : (document.documentElement || f.parentNode || f).scrollTop); d = d.left + ("pageXOffset" in window ? window.pageXOffset : (document.documentElement || f.parentNode || f).scrollLeft); f = a.toString() + "," + d; b.b.hasOwnProperty(f) ? a = !1 : (b.b[f] = !0, a = a <= b.g.height && d <= b.g.width) } a && (b.a.push(e),
-                                        b.c[e] = !0)
-                                } y.prototype.checkImageForCriticality = function (b) { b.getBoundingClientRect && z(this, b) }; u("pagespeed.CriticalImages.checkImageForCriticality", function (b) { x.checkImageForCriticality(b) }); u("pagespeed.CriticalImages.checkCriticalImages", function () { A(x) });
-                                function A(b) {
-                                    b.b = {}; for (var c = ["IMG", "INPUT"], a = [], d = 0; d < c.length; ++d)a = a.concat(v(document.getElementsByTagName(c[d]))); if (a.length && a[0].getBoundingClientRect) {
-                                        for (d = 0; c = a[d]; ++d)z(b, c); a = "oh=" + b.l; b.f && (a += "&n=" + b.f); if (c = !!b.a.length) for (a += "&ci=" + encodeURIComponent(b.a[0]), d = 1; d < b.a.length; ++d) { var e = "," + encodeURIComponent(b.a[d]); 131072 >= a.length + e.length && (a += e) } b.i && (e = "&rd=" + encodeURIComponent(JSON.stringify(B())), 131072 >= a.length + e.length && (a += e), c = !0); C = a; if (c) {
-                                            d = b.h; b = b.j; var f; if (window.XMLHttpRequest) f =
-                                                new XMLHttpRequest; else if (window.ActiveXObject) try { f = new ActiveXObject("Msxml2.XMLHTTP") } catch (r) { try { f = new ActiveXObject("Microsoft.XMLHTTP") } catch (D) { } } f && (f.open("POST", d + (-1 == d.indexOf("?") ? "?" : "&") + "url=" + encodeURIComponent(b)), f.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), f.send(a))
-                                        }
+<div class="section post-section pt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center">
+                    <script data-pagespeed-no-defer>//<![CDATA[
+                        (function () {
+                            for (var g = "function" == typeof Object.defineProperties ? Object.defineProperty : function (b, c, a) { if (a.get || a.set) throw new TypeError("ES3 does not support getters and setters."); b != Array.prototype && b != Object.prototype && (b[c] = a.value) }, h = "undefined" != typeof window && window === this ? this : "undefined" != typeof global && null != global ? global : this, k = ["String", "prototype", "repeat"], l = 0; l < k.length - 1; l++) { var m = k[l]; m in h || (h[m] = {}); h = h[m] }
+                            var n = k[k.length - 1], p = h[n], q = p ? p : function (b) { var c; if (null == this) throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined"); c = this + ""; if (0 > b || 1342177279 < b) throw new RangeError("Invalid count value"); b |= 0; for (var a = ""; b;)if (b & 1 && (a += c), b >>>= 1) c += c; return a }; q != p && null != q && g(h, n, { configurable: !0, writable: !0, value: q }); var t = this;
+                            function u(b, c) { var a = b.split("."), d = t; a[0] in d || !d.execScript || d.execScript("var " + a[0]); for (var e; a.length && (e = a.shift());)a.length || void 0 === c ? d[e] ? d = d[e] : d = d[e] = {} : d[e] = c }; function v(b) { var c = b.length; if (0 < c) { for (var a = Array(c), d = 0; d < c; d++)a[d] = b[d]; return a } return [] }; function w(b) { var c = window; if (c.addEventListener) c.addEventListener("load", b, !1); else if (c.attachEvent) c.attachEvent("onload", b); else { var a = c.onload; c.onload = function () { b.call(this); a && a.call(this) } } }; var x; function y(b, c, a, d, e) { this.h = b; this.j = c; this.l = a; this.f = e; this.g = { height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight, width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth }; this.i = d; this.b = {}; this.a = []; this.c = {} }
+                            function z(b, c) {
+                                var a, d, e = c.getAttribute("data-pagespeed-url-hash"); if (a = e && !(e in b.c)) if (0 >= c.offsetWidth && 0 >= c.offsetHeight) a = !1; else { d = c.getBoundingClientRect(); var f = document.body; a = d.top + ("pageYOffset" in window ? window.pageYOffset : (document.documentElement || f.parentNode || f).scrollTop); d = d.left + ("pageXOffset" in window ? window.pageXOffset : (document.documentElement || f.parentNode || f).scrollLeft); f = a.toString() + "," + d; b.b.hasOwnProperty(f) ? a = !1 : (b.b[f] = !0, a = a <= b.g.height && d <= b.g.width) } a && (b.a.push(e),
+                                    b.c[e] = !0)
+                            } y.prototype.checkImageForCriticality = function (b) { b.getBoundingClientRect && z(this, b) }; u("pagespeed.CriticalImages.checkImageForCriticality", function (b) { x.checkImageForCriticality(b) }); u("pagespeed.CriticalImages.checkCriticalImages", function () { A(x) });
+                            function A(b) {
+                                b.b = {}; for (var c = ["IMG", "INPUT"], a = [], d = 0; d < c.length; ++d)a = a.concat(v(document.getElementsByTagName(c[d]))); if (a.length && a[0].getBoundingClientRect) {
+                                    for (d = 0; c = a[d]; ++d)z(b, c); a = "oh=" + b.l; b.f && (a += "&n=" + b.f); if (c = !!b.a.length) for (a += "&ci=" + encodeURIComponent(b.a[0]), d = 1; d < b.a.length; ++d) { var e = "," + encodeURIComponent(b.a[d]); 131072 >= a.length + e.length && (a += e) } b.i && (e = "&rd=" + encodeURIComponent(JSON.stringify(B())), 131072 >= a.length + e.length && (a += e), c = !0); C = a; if (c) {
+                                        d = b.h; b = b.j; var f; if (window.XMLHttpRequest) f =
+                                            new XMLHttpRequest; else if (window.ActiveXObject) try { f = new ActiveXObject("Msxml2.XMLHTTP") } catch (r) { try { f = new ActiveXObject("Microsoft.XMLHTTP") } catch (D) { } } f && (f.open("POST", d + (-1 == d.indexOf("?") ? "?" : "&") + "url=" + encodeURIComponent(b)), f.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), f.send(a))
                                     }
                                 }
-                                function B() { var b = {}, c; c = document.getElementsByTagName("IMG"); if (!c.length) return {}; var a = c[0]; if (!("naturalWidth" in a && "naturalHeight" in a)) return {}; for (var d = 0; a = c[d]; ++d) { var e = a.getAttribute("data-pagespeed-url-hash"); e && (!(e in b) && 0 < a.width && 0 < a.height && 0 < a.naturalWidth && 0 < a.naturalHeight || e in b && a.width >= b[e].o && a.height >= b[e].m) && (b[e] = { rw: a.width, rh: a.height, ow: a.naturalWidth, oh: a.naturalHeight }) } return b } var C = ""; u("pagespeed.CriticalImages.getBeaconData", function () { return C });
-                                u("pagespeed.CriticalImages.Run", function (b, c, a, d, e, f) { var r = new y(b, c, a, e, f); x = r; d && w(function () { window.setTimeout(function () { A(r) }, 0) }) });
-                            })();
+                            }
+                            function B() { var b = {}, c; c = document.getElementsByTagName("IMG"); if (!c.length) return {}; var a = c[0]; if (!("naturalWidth" in a && "naturalHeight" in a)) return {}; for (var d = 0; a = c[d]; ++d) { var e = a.getAttribute("data-pagespeed-url-hash"); e && (!(e in b) && 0 < a.width && 0 < a.height && 0 < a.naturalWidth && 0 < a.naturalHeight || e in b && a.width >= b[e].o && a.height >= b[e].m) && (b[e] = { rw: a.width, rh: a.height, ow: a.naturalWidth, oh: a.naturalHeight }) } return b } var C = ""; u("pagespeed.CriticalImages.getBeaconData", function () { return C });
+                            u("pagespeed.CriticalImages.Run", function (b, c, a, d, e, f) { var r = new y(b, c, a, e, f); x = r; d && w(function () { window.setTimeout(function () { A(r) }, 0) }) });
+                        })();
 
-                            pagespeed.CriticalImages.Run('/mod_pagespeed_beacon', 'https://preview.colorlib.com/theme/magdesign/single.html', '-ilGEe-FWC', true, false, 'Px--XmVHNHo');
+                        pagespeed.CriticalImages.Run('/mod_pagespeed_beacon', 'https://preview.colorlib.com/theme/magdesign/single.html', '-ilGEe-FWC', true, false, 'Px--XmVHNHo');
 //]]></script><img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}" alt="Image"
-                            class="author-pic img-fluid rounded-circle mx-auto" data-pagespeed-url-hash="1813383360"
-                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    </div>
-                    <span class="d-block text-center">{{user.username}}</span>
-                    <span class="date d-block text-center small text-uppercase text-black-50 mb-5">{{blog.date}}</span>
-                    <h2 class="heading text-center">{{blog.title}}
-                    </h2>
-                    <p class="lead mb-4 text-center">Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts.</p>
-                    <img src="{{blog.image.url}}" alt="Image"
-                        class="img-fluid rounded mb-4 justify-content-center " data-pagespeed-url-hash="3151298507"
+                        class="author-pic img-fluid rounded-circle mx-auto" data-pagespeed-url-hash="1813383360"
                         onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <p>{{ blog.content |safe }}</p>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                    </p>
-                    <blockquote>
-                        <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
-                            Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her
-                            seven versalia, put her initial into the belt and made herself on the way.</p>
-                    </blockquote>
-                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                        unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
-                        decided to leave for the far World of Grammar.</p>
-                    <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline
-                        of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own
-                        road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
-                    </p>
-                    <div class="row g-1 my-5">
-                        <div class="col-lg-4">
-                            <a href="{% static 'images/post_lg_1.jpg' %}" class="glightbox"><img
-                                    src="{% static 'images/xpost_lg_1.jpg.pagespeed.ic.vC5886c_pL.jpg' %}" alt="Image"
-                                    class="img-fluid rounded" data-pagespeed-url-hash="1105166545"
-                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="{% static 'images/post_lg_2.jpg' %}" class="glightbox"><img
-                                    src="{% static 'images/xpost_lg_2.jpg.pagespeed.ic.YbC8FwTKmr.jpg' %}" alt="Image"
-                                    class="img-fluid rounded" data-pagespeed-url-hash="1399666466"
-                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="{% static 'images/post_lg_3.jpg' %}" class="glightbox"><img
-                                    src="{% static 'images/xpost_lg_3.jpg.pagespeed.ic.qhXWgmNnIn.jpg' %}" alt="Image"
-                                    class="img-fluid rounded" data-pagespeed-url-hash="1694166387"
-                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="{% static 'images/post_lg_4.jpg' %}" class="glightbox"><img
-                                    src="{% static 'images/xpost_lg_4.jpg.pagespeed.ic.oJIp7wddWl.jpg' %}" alt="Image"
-                                    class="img-fluid rounded" data-pagespeed-url-hash="1988666308"
-                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="{% static 'images/post_lg_1.jpg' %}" class="glightbox"><img
-                                    src="{% static 'images/xpost_lg_1.jpg.pagespeed.ic.vC5886c_pL.jpg' %}" alt="Image"
-                                    class="img-fluid rounded" data-pagespeed-url-hash="1105166545"
-                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="{% static 'images/post_lg_2.jpg' %}" class="glightbox"><img
-                                    src="{% static 'images/xpost_lg_2.jpg.pagespeed.ic.YbC8FwTKmr.jpg' %}" alt="Image"
-                                    class="img-fluid rounded" data-pagespeed-url-hash="1399666466"
-                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-                        </div>
+                </div>
+                <span class="d-block text-center">{{user.username}}</span>
+                <span class="date d-block text-center small text-uppercase text-black-50 mb-5">{{blog.date}}</span>
+                <h2 class="heading text-center">{{blog.title}}
+                </h2>
+                <p class="lead mb-4 text-center">Far far away, behind the word mountains, far from the countries
+                    Vokalia and Consonantia, there live the blind texts.</p>
+                <img src="{{blog.image.url}}" alt="Image"
+                    class="img-fluid rounded mb-4 justify-content-center " data-pagespeed-url-hash="3151298507"
+                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                <p>{{ blog.content |safe }}</p>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
+                    is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                </p>
+                <blockquote>
+                    <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+                        Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her
+                        seven versalia, put her initial into the belt and made herself on the way.</p>
+                </blockquote>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+                    unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
+                    decided to leave for the far World of Grammar.</p>
+                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline
+                    of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own
+                    road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
+                </p>
+                <div class="row g-1 my-5">
+                    <div class="col-lg-4">
+                        <a href="{% static 'images/post_lg_1.jpg' %}" class="glightbox"><img
+                                src="{% static 'images/xpost_lg_1.jpg.pagespeed.ic.vC5886c_pL.jpg' %}" alt="Image"
+                                class="img-fluid rounded" data-pagespeed-url-hash="1105166545"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                     </div>
-                    <p>
-                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                        live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.</p>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                    </p>
-                    <div class="row mt-5 pt-5 border-top">
-                        <div class="col-12">
-                            <span class="fw-bold text-black small mb-1">Share</span>
-                            <ul class="social list-unstyled">
-                                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                                <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                                <li><a href="#"><span class="icon-pinterest"></span></a></li>
-                            </ul>
-                        </div>
+                    <div class="col-lg-4">
+                        <a href="{% static 'images/post_lg_2.jpg' %}" class="glightbox"><img
+                                src="{% static 'images/xpost_lg_2.jpg.pagespeed.ic.YbC8FwTKmr.jpg' %}" alt="Image"
+                                class="img-fluid rounded" data-pagespeed-url-hash="1399666466"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="{% static 'images/post_lg_3.jpg' %}" class="glightbox"><img
+                                src="{% static 'images/xpost_lg_3.jpg.pagespeed.ic.qhXWgmNnIn.jpg' %}" alt="Image"
+                                class="img-fluid rounded" data-pagespeed-url-hash="1694166387"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="{% static 'images/post_lg_4.jpg' %}" class="glightbox"><img
+                                src="{% static 'images/xpost_lg_4.jpg.pagespeed.ic.oJIp7wddWl.jpg' %}" alt="Image"
+                                class="img-fluid rounded" data-pagespeed-url-hash="1988666308"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="{% static 'images/post_lg_1.jpg' %}" class="glightbox"><img
+                                src="{% static 'images/xpost_lg_1.jpg.pagespeed.ic.vC5886c_pL.jpg' %}" alt="Image"
+                                class="img-fluid rounded" data-pagespeed-url-hash="1105166545"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="{% static 'images/post_lg_2.jpg' %}" class="glightbox"><img
+                                src="{% static 'images/xpost_lg_2.jpg.pagespeed.ic.YbC8FwTKmr.jpg' %}" alt="Image"
+                                class="img-fluid rounded" data-pagespeed-url-hash="1399666466"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="section pb-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="heading">Related</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="post-entry d-md-flex small-horizontal mb-5">
-                        <div class="me-md-5 thumbnail mb-3 mb-md-0">
-                            <img src="{% static 'images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg' %}" alt="Image"
-                                class="img-fluid" data-pagespeed-url-hash="3151298507"
-                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                        </div>
-                        <div class="content">
-                            <div class="post-meta mb-3">
-                                <a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a>
-                                &mdash;
-                                <span class="date">July 2, 2020</span>
-                            </div>
-                            <h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are
-                                    your greatest
-                                    source of learning.</a></h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <a href="#" class="post-author d-flex align-items-center">
-                                <div class="author-pic">
-                                    <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
-                                        alt="Image" data-pagespeed-url-hash="1813383360"
-                                        onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                </div>
-                                <div class="text">
-                                    <strong>Sergy Campbell</strong>
-                                    <span>Author, 26 published post</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="post-entry d-md-flex small-horizontal mb-5">
-                        <div class="me-md-5 thumbnail mb-3 mb-md-0">
-                            <img src="{% static 'images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg' %}" alt="Image"
-                                class="img-fluid" data-pagespeed-url-hash="3445798428"
-                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                        </div>
-                        <div class="content">
-                            <div class="post-meta mb-3">
-                                <a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a>
-                                &mdash;
-                                <span class="date">July 2, 2020</span>
-                            </div>
-                            <h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are
-                                    your greatest
-                                    source of learning.</a></h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <a href="#" class="post-author d-flex align-items-center">
-                                <div class="author-pic">
-                                    <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
-                                        alt="Image" data-pagespeed-url-hash="1813383360"
-                                        onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                </div>
-                                <div class="text">
-                                    <strong>Sergy Campbell</strong>
-                                    <span>Author, 26 published post</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="post-entry d-md-flex small-horizontal mb-5">
-                        <div class="me-md-5 thumbnail mb-3 mb-md-0">
-                            <img src="{% static 'images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg' %}" alt="Image"
-                                class="img-fluid" data-pagespeed-url-hash="3740298349"
-                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                        </div>
-                        <div class="content">
-                            <div class="post-meta mb-3">
-                                <a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a>
-                                &mdash;
-                                <span class="date">July 2, 2020</span>
-                            </div>
-                            <h2 class="heading"><a href="{% static 'home:open_blog' %}">Your most unhappy customers are
-                                    your greatest
-                                    source of learning.</a></h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <a href="#" class="post-author d-flex align-items-center">
-                                <div class="author-pic">
-                                    <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
-                                        alt="Image" data-pagespeed-url-hash="1813383360"
-                                        onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                </div>
-                                <div class="text">
-                                    <strong>Sergy Campbell</strong>
-                                    <span>Author, 26 published post</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="py-5 bg-light mx-md-3 sec-subscribe">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12" style="margin-bottom: 1rem;">
-                    <h2 class="h4 fw-bold">Leave a Comment</h2>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="mb-3 mb-md-0 form-group">
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control" placeholder="Message"
-                        style="margin-bottom: 1rem;"></textarea>
-                </div>
-            </div>
-            <div class="col-md-12" style="margin-bottom: 0.5rem;">
-                <input type="submit" class="btn btn-primary" value="Post Comment">
-            </div>
-            </form>
-        </div>
-    </div>
-
-
-
-
-
-
-    <div class="py-5 bg-light mx-md-3 sec-subscribe">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h4 fw-bold">Subscribe to newsletter</h2>
-                </div>
-            </div>
-            <form action="" class="row">
-                <div class="col-md-8">
-                    <div class="mb-3 mb-md-0">
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                    </div>
-                </div>
-                <div class="col-md-4 d-grid">
-                    <input type="submit" class="btn btn-primary" value="Subscribe">
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="site-footer">
-        <div class="container">
-            <div class="row justify-content-center copyright">
-                <div class="col-lg-7 text-center">
-                    <div class="widget">
+                <p>
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+                    live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+                    a large language ocean.</p>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
+                    is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                </p>
+                <div class="row mt-5 pt-5 border-top">
+                    <div class="col-12">
+                        <span class="fw-bold text-black small mb-1">Share</span>
                         <ul class="social list-unstyled">
                             <li><a href="#"><span class="icon-facebook"></span></a></li>
                             <li><a href="#"><span class="icon-twitter"></span></a></li>
                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon-youtube-play"></span></a></li>
+                            <li><a href="#"><span class="icon-pinterest"></span></a></li>
                         </ul>
-                    </div>
-                    <div class="widget">
-                        <p>Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank" rel="nofollow noopener">Colorlib</a>
-                        </p>
-                        <div class="d-block">
-                            <a href="#" class="m-2">Terms &amp; Conditions</a>/
-                            <a href="#" class="m-2">Privacy Policy</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div id="overlayer"></div>
-        <div class="loader">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<div class="section pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="heading">Related</h2>
             </div>
         </div>
-        <script src="{% static 'js/createBlog.js' %}"></script>
-        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-        <script src="{% static 'js/popper.min.js' %}"></script>
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'js/script.js' %}"></script>
-        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-        <script src="{% static 'js/tiny-slider.js' %}"></script>
-        <script
-            src="{% static 'js/glightbox.min.js+aos.js+navbar.js+counter.js+custom.js.pagespeed.jc.B7bFTsJZUK.js' %}"></script>
-        <script>eval(mod_pagespeed_KpCH1a$C_m);</script>
-        <script>eval(mod_pagespeed_Ej3jj9tqUo);</script>
-        <script>eval(mod_pagespeed_Pkx$Oz4Gi9);</script>
-        <script>eval(mod_pagespeed_9lpIcAXJZV);</script>
-        <script>eval(mod_pagespeed_GIrE68D1a2);</script>
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="post-entry d-md-flex small-horizontal mb-5">
+                    <div class="me-md-5 thumbnail mb-3 mb-md-0">
+                        <img src="{% static 'images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg' %}" alt="Image"
+                            class="img-fluid" data-pagespeed-url-hash="3151298507"
+                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    </div>
+                    <div class="content">
+                        <div class="post-meta mb-3">
+                            <a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a>
+                            &mdash;
+                            <span class="date">July 2, 2020</span>
+                        </div>
+                        <h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are
+                                your greatest
+                                source of learning.</a></h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                            there live the blind texts.</p>
+                        <a href="#" class="post-author d-flex align-items-center">
+                            <div class="author-pic">
+                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
+                                    alt="Image" data-pagespeed-url-hash="1813383360"
+                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            </div>
+                            <div class="text">
+                                <strong>Sergy Campbell</strong>
+                                <span>Author, 26 published post</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="post-entry d-md-flex small-horizontal mb-5">
+                    <div class="me-md-5 thumbnail mb-3 mb-md-0">
+                        <img src="{% static 'images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg' %}" alt="Image"
+                            class="img-fluid" data-pagespeed-url-hash="3445798428"
+                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    </div>
+                    <div class="content">
+                        <div class="post-meta mb-3">
+                            <a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a>
+                            &mdash;
+                            <span class="date">July 2, 2020</span>
+                        </div>
+                        <h2 class="heading"><a href="{% url 'home:open_blog' %}">Your most unhappy customers are
+                                your greatest
+                                source of learning.</a></h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                            there live the blind texts.</p>
+                        <a href="#" class="post-author d-flex align-items-center">
+                            <div class="author-pic">
+                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
+                                    alt="Image" data-pagespeed-url-hash="1813383360"
+                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            </div>
+                            <div class="text">
+                                <strong>Sergy Campbell</strong>
+                                <span>Author, 26 published post</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="post-entry d-md-flex small-horizontal mb-5">
+                    <div class="me-md-5 thumbnail mb-3 mb-md-0">
+                        <img src="{% static 'images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg' %}" alt="Image"
+                            class="img-fluid" data-pagespeed-url-hash="3740298349"
+                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    </div>
+                    <div class="content">
+                        <div class="post-meta mb-3">
+                            <a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a>
+                            &mdash;
+                            <span class="date">July 2, 2020</span>
+                        </div>
+                        <h2 class="heading"><a href="{% static 'home:open_blog' %}">Your most unhappy customers are
+                                your greatest
+                                source of learning.</a></h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                            there live the blind texts.</p>
+                        <a href="#" class="post-author d-flex align-items-center">
+                            <div class="author-pic">
+                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
+                                    alt="Image" data-pagespeed-url-hash="1813383360"
+                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            </div>
+                            <div class="text">
+                                <strong>Sergy Campbell</strong>
+                                <span>Author, 26 published post</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5 bg-light mx-md-3 sec-subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="margin-bottom: 1rem;">
+                <h2 class="h4 fw-bold">Leave a Comment</h2>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="mb-3 mb-md-0 form-group">
+                <textarea name="" id="message" cols="30" rows="10" class="form-control" placeholder="Message"
+                    style="margin-bottom: 1rem;"></textarea>
+            </div>
+        </div>
+        <div class="col-md-12" style="margin-bottom: 0.5rem;">
+            <input type="submit" class="btn btn-primary" value="Post Comment">
+        </div>
+        </form>
+    </div>
+</div>
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-
-            gtag('config', 'UA-23581568-13');
-        </script>
-        <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon='{"rayId":"69f85defba24d57f","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.9.0","si":100}'></script>
-</body>
-
-</html>
+<div class="py-5 bg-light mx-md-3 sec-subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h4 fw-bold">Subscribe to newsletter</h2>
+            </div>
+        </div>
+        <form action="" class="row">
+            <div class="col-md-8">
+                <div class="mb-3 mb-md-0">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+            </div>
+            <div class="col-md-4 d-grid">
+                <input type="submit" class="btn btn-primary" value="Subscribe">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

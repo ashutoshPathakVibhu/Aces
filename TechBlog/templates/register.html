@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    <link rel="stylesheet" href="../static/css/signin_signup.css">
+    <link rel="stylesheet" href="{% static 'css/signin_signup.css' %}">
 </head>
 <body>
     <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
@@ -18,8 +18,10 @@
             <div class="row d-flex">
                 <div class="col-lg-6">
                     <div class="card1 pb-5">
-                        <div class="row"> <img src="{% static 'images/tech.3.png'%}" class="logo"> </div>
-                        <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="{% static 'images/tech.6.png'%}" class="image" style="height: 500px; width: 90%;"> </div>
+                        <div class="col-md-6 text-left order-1 order-md-2 mb-3 mb-md-0" style="position: relative; top: .3cm;">
+                            <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase" style="font-weight: bold; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px; text-decoration: none;">Tech Blog</a>
+                        </div>
+                        <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="{% static 'images/tech.6.png'%}" class="image" style="height: 500px; width: 90%; margin-top: 1.5cm;" > </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -42,70 +44,86 @@
                         </div>
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
+                                <div class="row px-3"> <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Username</h6>
+                                </label> <input class="mb-2" type="text" name="username" placeholder="Enter a Username" > 
+                                </div>
+                                <div class="row px-3" style="margin-left: -0.79cm; margin-right: -0.83cm;"> 
+                                <div class="col-lg-6">
+                                    <label class="f_name">
+                                        <h6 class="mb-0 text-sm">First Name</h6>
+                                    </label> <input class="mb-2" type="text" name="first_name" placeholder="First Name">
+                                    
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="l_name">
+                                        <h6 class="mb-0 text-sm">Last Name</h6>
+                                    </label> <input class="mb-2" type="text" name="last_name" placeholder="Last Name">
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="row px-3">
+                                <label class="mb-1" for="img">
+                                    <h6 class="mb-0 text-sm">Select Profile Picture:</h6>
+                                </label>
+                                <input class="mb-2" type="file" id="img" name="image">
+                            </div>
+                            <!-- <div class="row px-3"> 
+                                <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Interest</h6>
+                                </label> 
+                                <select name="interest" id="int" style="width: 100%; height: 1cm; margin-bottom: 0.3cm;">
+                                    <option value="">Item1</option>
+                                    <option value="">Item2</option>
+                                    <option value="">Item3</option>
+                                    <option value="">Item4</option>
+                                    <option value="">Item5</option>
+                                </select>
+                            </div> -->
                             <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-sm">Username</h6>
-                            </label> <input class="mb-2" type="text" name="username" placeholder="Enter a Username" > 
-                        </div>
-                        <div class="row px-3" style="margin-left: -0.79cm; margin-right: -0.83cm;"> 
-                            <div class="col-lg-6">
-                                <label class="f_name">
-                                    <h6 class="mb-0 text-sm">First Name</h6>
-                                </label> <input class="mb-2" type="text" name="first_name" placeholder="First Name">
-                                
+                                    <h6 class="mb-0 text-sm">Email Address</h6>
+                                </label> <input class="mb-2" type="text" name="email" placeholder="Enter a valid email address" > 
                             </div>
-                            <div class="col-lg-6">
-                                <label class="l_name">
-                                    <h6 class="mb-0 text-sm">Last Name</h6>
-                                </label> <input class="mb-2" type="text" name="last_name" placeholder="Last Name">
-                                
+                            <div class="row px-3"> <label class="mb-1">
+                                <h6 class="mb-0 text-sm">Password</h6>
+                                </label> <input class="mb-2" type="password" name="password1" placeholder="Enter password"> 
                             </div>
-                            
-                        </div>
-                        <div class="row px-3">
-                            <label class="mb-1" for="img">
-                                <h6 class="mb-0 text-sm">Select Profile Picture:</h6>
-                            </label>
-                            <input class="mb-2" type="file" id="img" name="image">
-                        </div>
-                        <!-- <div class="row px-3"> 
-                            <label class="mb-1">
-                                <h6 class="mb-0 text-sm">Interest</h6>
-                            </label> 
-                            <select name="interest" id="int" style="width: 100%; height: 1cm; margin-bottom: 0.3cm;">
-                                <option value="">Item1</option>
-                                <option value="">Item2</option>
-                                <option value="">Item3</option>
-                                <option value="">Item4</option>
-                                <option value="">Item5</option>
-                            </select>
-                        </div> -->
-                        <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-sm">Email Address</h6>
-                            </label> <input class="mb-2" type="text" name="email" placeholder="Enter a valid email address" > 
-                        </div>
-                        <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Password</h6>
-                        </label> <input class="mb-2" type="password" name="password1" placeholder="Enter password"> 
-                    </div>
-                    <div class="row px-3"> <label class="mb-1">
-                        <h6 class="mb-0 text-sm">Confirm Password</h6>
-                    </label> <input class="mb-3" type="password" name="password2" placeholder="Enter password"> 
-                </div>
-                
-                <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Register</button> </div>
-            </form>
+                            <div class="row px-3"> <label class="mb-1">
+                                <h6 class="mb-0 text-sm">Confirm Password</h6>
+                                </label> <input class="mb-3" type="password" name="password2" placeholder="Enter password"> 
+                            </div>
+                    
+                            <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Register</button> </div>
+                        </form>
                 
                     </div>
                 </div>
             </div>
-            <div class="bg-blue py-4">
-                <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2019. All rights reserved.</small>
-                    <div class="social-contact ml-4 ml-sm-auto">
-                        <a href=""><span class="fa fa-facebook mr-4 text-sm"></span></a>
-                        <a href=""><span class="fa fa-google-plus mr-4 text-sm"></span></a>
-                        <a href=""><span class="fa fa-linkedin mr-4 text-sm"></span></a> 
-                        <a href=""><span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span></a>
-    
+        </div>
+    </div>
+    <div class="site-footer" style="position: relative; top: -2cm; height: 20px; height: 20px;">
+        <div class="container" style="margin-bottom: 0cm; margin-bottom: 0%;">
+            <div class="row justify-content-center copyright" style="margin-bottom: 0cm; margin-bottom: 0%;">
+                <div class="col-lg-7 text-center">
+                    <div class="widget">
+                        <ul class="social list-unstyled">
+                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                            <li><a href="#"><span class="fa fa-youtube-play"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <p>Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank" rel="nofollow noopener">Colorlib</a>
+                        </p>
+                        <div class="d-block">
+                            <a href="#" class="m-2">Terms &amp; Conditions</a>/
+                            <a href="#" class="m-2">Privacy Policy</a>
+                        </div>
                     </div>
                 </div>
             </div>

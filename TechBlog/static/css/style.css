@@ -397,4 +397,9 @@ body {
   .foot-credit p a {
     color: #218838; }
 
+    .site-footer {
+      font-size: 14px;
+      color: #888;
+      padding: 70px 0; }
+
 /*# sourceMappingURL=style.css.map */
