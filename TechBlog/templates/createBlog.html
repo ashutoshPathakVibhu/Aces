@@ -63,6 +63,12 @@
                     <textarea class="form-control bcontent" name="content" rows="20" cols="50"></textarea>
                 </div>
                 <div class="form-group">
+                    <label>Tags*<div class="text-muted">
+                        (Seperated by Commas)
+                    </div></label>
+                    <input type="text" class="form-control" name="tags" placeholder="Coding,Algorithms" />
+                </div>
+                <div class="form-group">
                     <input type="submit" name="Submit" value="Submit"
                         class="btn btn-primary form-control" script />
                 </div>
@@ -70,4 +76,7 @@
         </div>
     </div>
 </div>
+<script>
+    CKEDITOR.replace("content");
+</script>
 {% endblock %}
