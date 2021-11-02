@@ -27,3 +27,14 @@ def create_blog(request):
         return render(request,'createBlog.html',context)
     form = BlogForm()
     return render(request,'createBlog.html',context)
+
+def tag_view(request,tag):
+    posts = Post.objects.all()
+    context = {}
+    context['blogs'] = []
+    for post in posts:
+        tag_list = post.get_tags_list()
+        print(tag_list)
+        if tag in tag_list:
+                context['blogs'].append(post)
+    return render(request,"userProfile.html",context)

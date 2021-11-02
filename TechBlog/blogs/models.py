@@ -20,6 +20,7 @@ class Post(models.Model):
     author = models.ForeignKey(Profile , on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100,null=True,blank=True)
     title = models.CharField(blank=False,unique=False,max_length=50)
+    tags = models.CharField(null=True,max_length=200)
     image = models.ImageField(upload_to='blog_pics',blank=True)
     content = models.TextField()
     date = models.DateField(auto_now_add=True,blank=True)
@@ -30,3 +31,8 @@ class Post(models.Model):
     def save(self , *args, **kwargs): 
         self.slug = generate_slug(self.title)
         super(Post, self).save(*args, **kwargs)
+    
+    def get_tags_list(self):
+        data = self.tags
+        tags = [x.strip() for x in data.split(',')]
+        return tags;
