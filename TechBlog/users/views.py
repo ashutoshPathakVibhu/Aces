@@ -1,6 +1,7 @@
 from django import forms
 from django.shortcuts import render,redirect
 from .forms import UserRegisterForm
+from django.contrib import messages
 # Create your views here.
 
 def index(request):
@@ -12,6 +13,7 @@ def register(request):
             form = UserRegisterForm(request.POST,request.FILES)
             if form.is_valid():
                 form.save()
+                # messages.info(request, 'Registration Successful!')
                 return redirect('home:userProfile')
         else:
             form = UserRegisterForm()

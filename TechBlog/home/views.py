@@ -18,7 +18,7 @@ def login(request):
         if user is not None:
             auth.login(request,user)
             messages.success(request, "Successfully Logged In")
-            return redirect('/')
+            return render(request,'index.html')
         else:
             messages.error(request,'Invalid Credentials, Please try again')
             return render(request,'login.html')
@@ -46,6 +46,9 @@ def userProfile(request):
 
 def createBlog(request):
     return render(request,'createBlog.html')
+
+def blogList(request):
+    return render(request,'blogList.html')
 
 def open_blog(request):
     return render(request,'open_blog.html')
