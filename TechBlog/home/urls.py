@@ -12,4 +12,5 @@ urlpatterns = [
     path('userProfile/', views.userProfile, name = "userProfile"),
     path('createBlog/', views.createBlog, name = "createBlog"),
     path('open_blog/', views.open_blog, name = "open_blog"),
+    path('blogList/', views.blogList, name = "blogList"),
 ]

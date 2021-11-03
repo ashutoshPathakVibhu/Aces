@@ -6,17 +6,18 @@
 
 {% block content %}
 {% load static %}
+
 <head>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/fontawsom-all.min.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/createBlog.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     <script src="//cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
-    
+
 </head>
 
 <div class="container-fluid">
@@ -58,19 +59,18 @@
                 </div> -->
                 <div class="form-group">
                     <label>Content*<div class="text-muted">
-                        (Please write 2-3 lines of unformatted introductory paragraph in the beginning)
-                    </div></label>
+                            (Please write 2-3 lines of unformatted introductory paragraph in the beginning)
+                        </div></label>
                     <textarea class="form-control bcontent" name="content" rows="20" cols="50"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Tags*<div class="text-muted">
-                        (Seperated by Commas)
-                    </div></label>
+                            (Seperated by Commas)
+                        </div></label>
                     <input type="text" class="form-control" name="tags" placeholder="Coding,Algorithms" />
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="Submit" value="Submit"
-                        class="btn btn-primary form-control" script />
+                    <input type="submit" name="Submit" value="Submit" class="btn btn-primary form-control" script />
                 </div>
             </form>
         </div>

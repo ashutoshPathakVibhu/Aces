@@ -34,7 +34,7 @@
                                     style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">Profile</a>
                             </li>
                             <li><a href="{% url 'home:logout' %}" class="button"
-                                style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">LogOut</a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">LogOut</a>
                             </li>
                             {% endif %}
                         </ul>
@@ -49,6 +49,7 @@
                 <li class="active"><a href="{% url 'home:index' %}">Home</a></li>
                 <li class="has-children">
                     <a href="{%url 'home:createBlog' %}">Create Blog</a>
+                    <a href="{%url 'home:blogList' %}">Blogs</a>
                     <ul class="dropdown">
                         <li><a href="#">Travel</a></li>
                         <li><a href="#">Food</a></li>
