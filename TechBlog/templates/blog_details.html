@@ -235,16 +235,23 @@
             <div class="col-lg-12" style="margin-bottom: 1rem;">
                 <h2 class="h4 fw-bold">Leave a Comment</h2>
             </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+        <br/>
+        <br/>
+        <div class="main-comment-section">
+            {{ comments.count }} Comment{{ comments|pluralize }}
+            {% for comment in comments %}
+            <blockquote class="blockquote">
+                <p class="mb-0">{{ comment.content }}</p>
+                <footer class="blockquote-footer">by <cite title="Source Title">{{ comment.user|capfirst }}</cite></footer>
+              </blockquote>
+            {% endfor %}
         </div>
-        <div class="col-md-8">
-            <div class="mb-3 mb-md-0 form-group">
-                <textarea name="" id="message" cols="30" rows="10" class="form-control" placeholder="Message"
-                    style="margin-bottom: 1rem;"></textarea>
-            </div>
-        </div>
-        <div class="col-md-12" style="margin-bottom: 0.5rem;">
-            <input type="submit" class="btn btn-primary" value="Post Comment">
-        </div>
+
         </form>
     </div>
 </div>
