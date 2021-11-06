@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from .forms import BlogForm
-from .models import Post
+from .forms import *
+from .models import Post,Comment
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 def index(request):
@@ -12,7 +13,21 @@ def index(request):
 def blog_detail(request,slug):
     context = {}
     blog = Post.objects.get(slug=slug)
+    comments = Comment.objects.filter(post=blog).order_by('-id')
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST or None)
+        if comment_form.is_valid():
+            content = request.POST.get('content')
+            comment = Comment.objects.create(post=blog,user=request.user,content=content)
+            comment.save()
+            return redirect(f"/blogs/details/{blog.slug}")
+    else:
+        comment_form = CommentForm()
+
     context['blog'] = blog
+    context['comments'] = comments
+    context['comment_form'] = comment_form
     return render(request,"blog_details.html",context)
 
 def create_blog(request):
