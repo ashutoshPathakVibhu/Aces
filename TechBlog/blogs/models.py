@@ -47,3 +47,14 @@ class Comment(models.Model):
 
     def __str__(self):
         return '{}-{}'.format(self.post.title,str(self.user.first_name))
+
+
+# UpVotes
+class UpVote(models.Model):
+    comment=models.ForeignKey(Comment,on_delete=models.CASCADE)
+    user=models.ForeignKey(Profile,on_delete=models.CASCADE,related_name='upvote_user')
+
+# DownVotes
+class DownVote(models.Model):
+    comment=models.ForeignKey(Comment,on_delete=models.CASCADE)
+    user=models.ForeignKey(Profile,on_delete=models.CASCADE,related_name='downvote_user')
