@@ -43,8 +43,8 @@
                 </h2>
                 <p class="lead mb-4 text-center">Far far away, behind the word mountains, far from the countries
                     Vokalia and Consonantia, there live the blind texts.</p>
-                <img src="{{blog.image.url}}" alt="Image"
-                    class="img-fluid rounded mb-4 justify-content-center " data-pagespeed-url-hash="3151298507"
+                <img src="{{blog.image.url}}" alt="Image" class="img-fluid rounded mb-4 justify-content-center "
+                    data-pagespeed-url-hash="3151298507"
                     onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                 <p>{{ blog.content |safe }}</p>
                 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
@@ -150,8 +150,8 @@
                             there live the blind texts.</p>
                         <a href="#" class="post-author d-flex align-items-center">
                             <div class="author-pic">
-                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
-                                    alt="Image" data-pagespeed-url-hash="1813383360"
+                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}" alt="Image"
+                                    data-pagespeed-url-hash="1813383360"
                                     onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                             </div>
                             <div class="text">
@@ -182,8 +182,8 @@
                             there live the blind texts.</p>
                         <a href="#" class="post-author d-flex align-items-center">
                             <div class="author-pic">
-                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
-                                    alt="Image" data-pagespeed-url-hash="1813383360"
+                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}" alt="Image"
+                                    data-pagespeed-url-hash="1813383360"
                                     onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                             </div>
                             <div class="text">
@@ -214,8 +214,8 @@
                             there live the blind texts.</p>
                         <a href="#" class="post-author d-flex align-items-center">
                             <div class="author-pic">
-                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}"
-                                    alt="Image" data-pagespeed-url-hash="1813383360"
+                                <img src="{% static 'images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg' %}" alt="Image"
+                                    data-pagespeed-url-hash="1813383360"
                                     onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                             </div>
                             <div class="text">
@@ -235,44 +235,111 @@
             <div class="col-lg-12" style="margin-bottom: 1rem;">
                 <h2 class="h4 fw-bold">Leave a Comment</h2>
             </div>
-        <form method="post">
-            {% csrf_token %}
-            {{ comment_form.as_p }}
-            <input type="submit" value="Submit" class="btn btn-primary">
-        </form>
-        <br/>
-        <br/>
-        <div class="main-comment-section">
-            {{ comments.count }} Comment{{ comments|pluralize }}
-            {% for comment in comments %}
-            <blockquote class="blockquote">
-                <p class="mb-0">{{ comment.content }}</p>
-                <footer class="blockquote-footer">by <cite title="Source Title">{{ comment.user|capfirst }}</cite></footer>
-              </blockquote>
-            {% endfor %}
-        </div>
-
-        </form>
-    </div>
-</div>
-
-<div class="py-5 bg-light mx-md-3 sec-subscribe">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="h4 fw-bold">Subscribe to newsletter</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+            <br />
+            <br />
+            <div class="main-comment-section">
+                {{ comments.count }} Comment{{ comments|pluralize }}
+                {% for comment in comments %}
+                <div class="row">
+                    <div class="col-1" style="text-align: center;">
+                        <div class="upvote">
+                            <strong class="upvote-count-{{comment.id}}">{{comment.upvote_set.count}}</strong><br />
+                            <span class="text-success">
+                                <i class="fa fa-arrow-up fa-2x upvote-click" data-comment="{{comment.id}}"></i>
+                            </span>
+                        </div>
+                        <div class="downvote mt-3">
+                            <span class="text-danger">
+                                <i class="fa fa-arrow-down fa-2x downvote-click" data-comment="{{comment.id}}"></i>
+                            </span><br />
+                            <strong class="downvote-count-{{comment.id}}">{{comment.downvote_set.count}}</strong>
+                        </div>
+                    </div>
+                    <div class="col-11 d-flex align-self-center">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">{{ comment.content }}</p>
+                            <footer class="blockquote-footer">by <cite title="Source Title">{{ comment.user|capfirst }}</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
+
+            </form>
         </div>
-        <form action="" class="row">
-            <div class="col-md-8">
-                <div class="mb-3 mb-md-0">
-                    <input type="email" class="form-control" placeholder="Enter your email">
+    </div>
+
+    <div class="py-5 bg-light mx-md-3 sec-subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h4 fw-bold">Subscribe to newsletter</h2>
                 </div>
             </div>
-            <div class="col-md-4 d-grid">
-                <input type="submit" class="btn btn-primary" value="Subscribe">
-            </div>
-        </form>
+            <form action="" class="row">
+                <div class="col-md-8">
+                    <div class="mb-3 mb-md-0">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                </div>
+                <div class="col-md-4 d-grid">
+                    <input type="submit" class="btn btn-primary" value="Subscribe">
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
+
+    {% block script %}
+    <script>
+        $(document).ready(function () {
+            $(".upvote-click").on('click', function () {
+                var commentid = $(this).data('comment');
+                console.log(commentid);
+                // Ajax
+                $.ajax({
+                    url: "{% url 'blogs:save-upvote' %}",
+                    type: "post",
+                    data: {
+                        commentid: commentid,
+                        csrfmiddlewaretoken: "{{csrf_token}}"
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        var _prevupvote = $(".upvote-count-" + commentid).text();
+                        if (res.bool == true) {
+                            $(".upvote-count-" + commentid).text(parseInt(_prevupvote) + 1);
+                        }
+                    }
+                });
+            });
+            
+            // Downvote
+            $(".downvote-click").on('click', function () {
+                var commentid = $(this).data('comment');
+                console.log(commentid);
+                // Ajax
+                $.ajax({
+                    url: "{% url 'blogs:save-downvote' %}",
+                    type: "post",
+                    data: {
+                        commentid: commentid,
+                        csrfmiddlewaretoken: "{{csrf_token}}"
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        var _prevupvote = $(".downvote-count-" + commentid).text();
+                        if (res.bool == true) {
+                            $(".downvote-count-" + commentid).text(parseInt(_prevupvote) + 1);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    {% endblock %}
