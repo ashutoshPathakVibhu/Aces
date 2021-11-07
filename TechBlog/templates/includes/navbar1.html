@@ -6,12 +6,18 @@
     </div>
     <div class="site-mobile-menu-body"></div>
 </div>
-<nav class="site-nav">
+<nav class="site-nav navbar-transparent">
     <div class="container">
         <div class="site-navigation">
             <div class="row">
                 <div class="col-md-6 text-center order-1 order-md-2 mb-3 mb-md-0">
-                    <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase">Tech Blog</a>
+                    <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase display-6">
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-7 text-center">
+                                <h2 class="heading">Tech Blog</h2>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-3 order-3 order-md-1">
                     <form action="#" class="search-form">
@@ -22,12 +28,26 @@
                 <div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
                     <div class="d-flex">
                         <ul class="list-unstyled social me-auto">
+                            <a href="javascript:void()" class="ml-auto font-weight-bold" id="theme-toggler"
+                                onclick="toggleTheme()"></a>
                             {% if not request.user.is_authenticated %}
                             <li><a href="{% url 'home:login' %}" class="button"
-                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">LogIn</a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">
+                                    <div class="row justify-content-center mb-5">
+                                        <div class="col-lg-7 text-center">
+                                            <h6 class="heading"><strong>Login</strong></h6>
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                             <li><a href="{% url 'users:signup' %}" class="button"
-                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">SignUp</a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">
+                                    <div class="row justify-content-center mb-5">
+                                        <div class="col-lg-7 text-center">
+                                            <h6 class="heading"><strong>SignUp</strong></h6>
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                             {% else %}
                             <li><a href="{% url 'home:userProfile' %}" class="button"
@@ -44,6 +64,7 @@
                         </a>
                     </div>
                 </div>
+
             </div>
             <ul class="js-clone-nav d-none d-lg-inline-none text-start site-menu float-end">
                 <li class="active"><a href="{% url 'home:index' %}">Home</a></li>
