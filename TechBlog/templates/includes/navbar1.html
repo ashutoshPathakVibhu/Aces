@@ -28,8 +28,20 @@
                 <div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
                     <div class="d-flex">
                         <ul class="list-unstyled social me-auto">
+                            <!-- <input type="checkbox" onchange="toggleTheme()" id="slider">
+                            <span class="slider round"></span>
                             <a href="javascript:void()" class="ml-auto font-weight-bold" id="theme-toggler"
-                                onclick="toggleTheme()"></a>
+                                onclick="toggleTheme()"></a> -->
+                            <div class="custom-control custom-switch mr-5">
+                                <input type="checkbox" class="custom-control-input" id="selector">
+                                <label class="custom-control-label" for="selector">
+                                    <div class="row justify-content-center mb-5">
+                                        <div class="col-lg-7 text-center">
+                                            <h6 class="heading"><strong>Dark mode</strong></h6>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
                             {% if not request.user.is_authenticated %}
                             <li><a href="{% url 'home:login' %}" class="button"
                                     style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">
@@ -51,10 +63,22 @@
                             </li>
                             {% else %}
                             <li><a href="{% url 'home:userProfile' %}" class="button"
-                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">Profile</a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">
+                                    <div class="row justify-content-center mb-5">
+                                        <div class="col-lg-7 text-center">
+                                            <h6 class="heading"><strong>Profile</strong></h6>
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                             <li><a href="{% url 'home:logout' %}" class="button"
-                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">LogOut</a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">
+                                    <div class="row justify-content-center mb-5">
+                                        <div class="col-lg-7 text-center">
+                                            <h6 class="heading"><strong>Logout</strong></h6>
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                             {% endif %}
                         </ul>
@@ -63,13 +87,15 @@
                             <span></span>
                         </a>
                     </div>
+
                 </div>
 
             </div>
             <ul class="js-clone-nav d-none d-lg-inline-none text-start site-menu float-end">
                 <li class="active"><a href="{% url 'home:index' %}">Home</a></li>
+                <li class="active"><a href="{%url 'home:createBlog' %}">Create Blog</a></li>
                 <li class="has-children">
-                    <a href="{%url 'home:createBlog' %}">Create Blog</a>
+                    
                     <a href="{%url 'home:blogList' %}">Blogs</a>
                     <ul class="dropdown">
                         <li><a href="#">Travel</a></li>
@@ -91,6 +117,7 @@
                 <li><a href="#">Technology</a></li>
                 <li><a href="#">Business</a></li>
             </ul>
+
         </div>
     </div>
 </nav>
