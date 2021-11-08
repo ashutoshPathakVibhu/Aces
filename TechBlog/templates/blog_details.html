@@ -8,6 +8,14 @@
 {% load static %}
 <div class="section post-section pt-5">
     <div class="container">
+                <div class="row shareable">
+                    <div class="col-md-12">
+                        <p><i class="fa fa-link"></i> &nbsp;Shareable Link : <span id="shareLink" class="link-text">{{request.get_host}}{{ blog.sharekey.slink }}</span>
+                            <a href="{% url 'blogs:createLink' blog.pk %}" id="createLink"
+                                class="btn btn-success link">Reset Link</a>
+                        </p>
+                    </div>
+                </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="text-center">
@@ -37,7 +45,7 @@
                         class="author-pic img-fluid rounded-circle mx-auto" data-pagespeed-url-hash="1813383360"
                         onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                 </div>
-                <span class="d-block text-center">{{user.username}}</span>
+                <span class="d-block text-center">{{blog.author.user.username}}</span>
                 <span class="date d-block text-center small text-uppercase text-black-50 mb-5">{{blog.date}}</span>
                 <h2 class="heading text-center">{{blog.title}}
                 </h2>
@@ -263,7 +271,8 @@
                     <div class="col-11 d-flex align-self-center">
                         <blockquote class="blockquote">
                             <p class="mb-0">{{ comment.content }}</p>
-                            <footer class="blockquote-footer">by <cite title="Source Title">{{ comment.user|capfirst }}</cite></footer>
+                            <footer class="blockquote-footer">by <cite title="Source Title">{{ comment.user|capfirst
+                                    }}</cite></footer>
                         </blockquote>
                     </div>
                 </div>
@@ -318,7 +327,7 @@
                     }
                 });
             });
-            
+
             // Downvote
             $(".downvote-click").on('click', function () {
                 var commentid = $(this).data('comment');
@@ -341,5 +350,24 @@
                 });
             });
         });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('click', '#createLink', function (event) {
+                event.preventDefault();
+                $.ajax(
+                    {
+                        url: $(this).attr('href'),
+                        type: 'get',
+                        data: {
+                        },
+                        success: function (data) {
+                            var temp = "{{ request.get_host }}/blogs/edit_access/" + data['key'];
+                            $('#shareLink').text(temp);
+                        }
+                    }
+                )
+            })
+        })
     </script>
     {% endblock %}

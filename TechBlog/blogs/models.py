@@ -1,6 +1,7 @@
 from django.db import models
 from users.models import Profile
 from django.utils.text import slugify 
+from django.urls import reverse
 import string
 import random
 from django.contrib.auth.models import User
@@ -37,7 +38,10 @@ class Post(models.Model):
     def get_tags_list(self):
         data = self.tags
         tags = [x.strip() for x in data.split(',')]
-        return tags;
+        return tags
+    
+    def get_absolute_url_detail(self,*args,**kwargs):
+        return reverse('blogs:update',args=[self.pk])
 
 class Comment(models.Model):
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
@@ -48,7 +52,6 @@ class Comment(models.Model):
     def __str__(self):
         return '{}-{}'.format(self.post.title,str(self.user.first_name))
 
-
 # UpVotes
 class UpVote(models.Model):
     comment=models.ForeignKey(Comment,on_delete=models.CASCADE)
@@ -58,3 +61,19 @@ class UpVote(models.Model):
 class DownVote(models.Model):
     comment=models.ForeignKey(Comment,on_delete=models.CASCADE)
     user=models.ForeignKey(Profile,on_delete=models.CASCADE,related_name='downvote_user')
+
+class ShareKey(models.Model):
+    blog=models.OneToOneField(Post,on_delete=models.CASCADE,related_name='sharelink',null=True)
+    location = models.TextField() # absolute path
+    token = models.CharField(max_length=40, primary_key=True)
+    creation_date = models.DateTimeField(auto_now_add=True)
+    expiration_seconds = models.BigIntegerField()
+
+    def expired(self):
+        return False
+
+    def __str__(self):
+        return self.blog.title
+
+    def slink(self):
+        return "/blogs/edit_access/"+self.token
