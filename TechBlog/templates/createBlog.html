@@ -35,17 +35,21 @@
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
-                    <input type="text" class="form-control" name="title" placeholder="Blog Title" />
+                    <!-- <input type="text" class="form-control" name="title" placeholder="Blog Title" /> -->
+                    <label>Title*</label>
+                    {{form.title}}
                 </div>
                 <div class="form-group">
-                    <div class="input-group">
+                    <!-- <div class="input-group">
                         <span class="input-group-btn">
                             <span class="btn btn-primary btn-file">
                                 Blog Image browse <input type="file" name="image" multiple>
                             </span>
-                        </span>
-                        <input type="text" class="form-control" readonly style="height: 1.1cm;">
-                    </div>
+                        </span> -->
+                        <!-- <input type="text" class="form-control" readonly style="height: 1.1cm;"> -->
+                    <!-- </div> -->
+                    <label>Blog Image : </label>
+                    {{form.image}}
                 </div>
                 <!-- <div class="form-group">
                     <div class="input-group">
@@ -61,13 +65,15 @@
                     <label>Content*<div class="text-muted">
                             (Please write 2-3 lines of unformatted introductory paragraph in the beginning)
                         </div></label>
-                    <textarea class="form-control bcontent" name="content" rows="20" cols="50"></textarea>
+                    <!-- <textarea class="form-control bcontent" name="content" rows="20" cols="50"></textarea> -->
+                    {{form.content}}
                 </div>
                 <div class="form-group">
                     <label>Tags*<div class="text-muted">
                             (Seperated by Commas)
                         </div></label>
-                    <input type="text" class="form-control" name="tags" placeholder="Coding,Algorithms" />
+                    <!-- <input type="text" class="form-control" name="tags" placeholder="Coding,Algorithms" /> -->
+                    {{form.tags}}
                 </div>
                 <div class="form-group">
                     <input type="submit" name="Submit" value="Submit" class="btn btn-primary form-control" script />
@@ -76,6 +82,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block script %}
 <script>
     CKEDITOR.replace("content");
 </script>

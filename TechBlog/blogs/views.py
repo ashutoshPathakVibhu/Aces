@@ -1,9 +1,14 @@
-from django.shortcuts import render, redirect
+from django.core.checks import messages
+from django.shortcuts import render, redirect, HttpResponse
+from .decorators import allow_shares
 from .forms import *
-from .models import Post, Comment, UpVote, DownVote
+from .models import Post, Comment, UpVote, DownVote, ShareKey
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
+from django.urls import resolve
+from django.utils.crypto import get_random_string
 from users.models import Profile
+from django.contrib import messages
 # Create your views here.
 
 
@@ -47,7 +52,25 @@ def create_blog(request):
         context['form'] = form
         return render(request, 'createBlog.html', context)
     form = BlogForm()
+    context['form'] = form
     return render(request, 'createBlog.html', context)
+
+@allow_shares
+def update_blog(request,pk,*args,**kwargs):
+    context = {}
+    blog = Post.objects.get(pk=pk)
+    print(blog)
+    if request.method == 'GET':
+        context['form'] = BlogForm(instance=blog)
+        return render(request,'createBlog.html',context)
+    else:
+        form = BlogForm(request.POST,request.FILES,instance=blog)
+        if form.is_valid():
+            form.save()
+            return redirect("blogs:index")
+        else:
+            messages.error(request,"Invalid form")
+        return render(request,"createBlog.html",{'form':form})
 
 
 def tag_view(request, tag):
@@ -62,6 +85,7 @@ def tag_view(request, tag):
     return render(request, "blogList.html", context)
 
 
+# Save Upvote
 def save_upvote(request):
     if request.method == 'POST':
         commentid = request.POST['commentid']
@@ -78,8 +102,6 @@ def save_upvote(request):
             return JsonResponse({'bool': True})
 
 # Save Downvote
-
-
 def save_downvote(request):
     if request.method == 'POST':
         commentid = request.POST['commentid']
@@ -94,3 +116,36 @@ def save_downvote(request):
                 user=user
             )
             return JsonResponse({'bool': True})
+
+
+def sharedPage(request, key):
+    try:
+        try:
+            shareKey = ShareKey.objects.get(pk=key)
+        except: raise SharifyError
+        # if shareKey.expired: raise SharifyError
+        func, args, kwargs = resolve(shareKey.location)
+        kwargs["__shared"] = True
+        kwargs['pid'] = shareKey.blog.pk
+        return func(request, *args, **kwargs)
+    except SharifyError:
+        return HttpResponse("This is beyond science") # or add a more detailed error page. This either means that the key doesn’t exist or is expired
+
+def createShare(request, pk):
+    task = Post.objects.get(pk=pk)
+    try:
+        key = task.sharekey
+        key.delete()
+        key = ShareKey.objects.create(blog=task,pk=get_random_string(40),
+                                      expiration_seconds=60*60*24, # 1 day
+                                      location = task.get_absolute_url_detail(),
+                                      )
+    except:
+        key = ShareKey.objects.create(blog=task, pk=get_random_string(40),
+                                      expiration_seconds=60 * 60 * 24,  # 1 day
+                                      location=task.get_absolute_url_detail(),
+                                      )
+    key.save()
+    return JsonResponse({"key":key.pk})
+
+class SharifyError(Exception):pass

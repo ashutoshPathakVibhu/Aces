@@ -12,4 +12,7 @@ urlpatterns = [
     path('tags/<tag>', views.tag_view, name="tag_list"),
     path('save-upvote', views.save_upvote, name='save-upvote'),
     path('save-downvote', views.save_downvote, name='save-downvote'),
+    path('update/<int:pk>/',views.update_blog,name='update'),
+    path('edit_access/<key>/',views.sharedPage,name='sharedPage'),
+    path('createlink/<int:pk>/',views.createShare,name='createLink'),
 ]
