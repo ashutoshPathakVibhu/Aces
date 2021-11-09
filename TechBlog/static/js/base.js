@@ -60,8 +60,10 @@ $(document).ready(function(){
     $("strong").toggleClass("text-white");
     $("small").toggleClass("text-white");
     $(".card-title").toggleClass("text-white");
+    $(".card-img").toggleClass("navbar-light bg-light");
     $(".card-text").toggleClass("text-white");
-    // $(".btn").toggleClass("text-white");
+    $(".container").toggleClass("text-white");
+    $(".container-fluid").toggleClass("text-white");
     $(".fas").toggleClass("text-white");
   });
 });
