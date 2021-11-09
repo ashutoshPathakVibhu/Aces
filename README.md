@@ -16,7 +16,7 @@
 ###### ★ Responsive UI Design.
 ###### ★ Integrate Switchable dark themes.
 #### Innovations :
-###### NA
+###### Sharable link for Editing Blogs in Groups
 #### Tech Stack :
 ###### ★ HTML
 ###### ★ CSS
