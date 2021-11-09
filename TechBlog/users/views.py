@@ -13,10 +13,12 @@ def register(request):
             form = UserRegisterForm(request.POST,request.FILES)
             if form.is_valid():
                 form.save()
-                # messages.info(request, 'Registration Successful!')
+                messages.info(request, 'Registration Successful!')
                 return redirect('home:userProfile')
         else:
             form = UserRegisterForm()
+        messages.info(request, 'Invalid Credentials, Please try again')
         return render(request, 'register.html', {'form': form})
     else:
+        messages.info(request, 'Invalid Credentials, Please try again')
         return redirect('home:index')
