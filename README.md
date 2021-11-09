@@ -15,6 +15,7 @@
 ###### ★ Comment section for each blog post. (Users can reply, mention others and can also report the comment if found offensive)
 ###### ★ Responsive UI Design.
 ###### ★ Integrate Switchable dark themes.
+###### ★ Proper Caching of Site.
 #### Innovations :
 ###### Sharable link for Editing Blogs in Groups
 #### Tech Stack :
