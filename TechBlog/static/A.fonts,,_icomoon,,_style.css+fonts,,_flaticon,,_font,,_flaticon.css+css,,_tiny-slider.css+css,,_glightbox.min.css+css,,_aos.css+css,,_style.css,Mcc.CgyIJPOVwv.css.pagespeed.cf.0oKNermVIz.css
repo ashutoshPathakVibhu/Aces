@@ -5952,7 +5952,7 @@ textarea.form-control {
   top: -9999px;
   width: 50px;
   height: 50px;
-  overflow: scroll; }
+  overflow: none; }
 
 @media (min-width: 576px) {
   .modal-dialog {
@@ -6737,7 +6737,7 @@ textarea.form-control {
   outline: none; }
 
 body, html {
-  overflow-x: hidden; }
+  overflow-x: visible; }
 
 body {
   font-family: "Poppins", sans-serif;
