@@ -61,7 +61,7 @@ $(document).ready(function(){
     $("small").toggleClass("text-white");
     $(".card-title").toggleClass("text-white");
     $(".card-text").toggleClass("text-white");
-    // $(".btn").toggleClass("text-white");
+    $(".container").toggleClass("text-white");
     $(".fas").toggleClass("text-white");
   });
 });

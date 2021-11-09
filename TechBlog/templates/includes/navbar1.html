@@ -11,30 +11,38 @@
         <div class="site-navigation">
             <div class="row">
                 <div class="col-md-6 text-center order-1 order-md-2 mb-3 mb-md-0">
-                    <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase">Tech Blog</a>
+                    <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase"><h4><strong>Tech Blog</strong></h4></a>
                 </div>
                 <div class="col-md-3 order-3 order-md-1">
-                    <form action="#" class="search-form">
-                        <span class="icon-search2"></span>
-                        <input type="search" class="form-control" placeholder="Search...">
-                    </form>
+                    <div class="custom-control custom-switch mr-5">
+                        <input type="checkbox" class="custom-control-input" id="selector">
+                        <label class="custom-control-label" for="selector">Dark Mode</label>
+                    </div>
                 </div>
                 <div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
                     <div class="d-flex">
                         <ul class="list-unstyled social me-auto">
                             {% if not request.user.is_authenticated %}
                             <li><a href="{% url 'home:login' %}" class="button"
-                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;"><h6 class="heading"><strong>Login</strong></h6></a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.5cm;">
+                                    <h6 class="heading"><strong>Login</strong></h6>
+                                </a>
                             </li>
                             <li><a href="{% url 'users:signup' %}" class="button"
-                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;"><h6 class="heading"><strong>SignUp</strong></h6></a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">
+                                    <h6 class="heading"><strong>SignUp</strong></h6>
+                                </a>
                             </li>
                             {% else %}
                             <li><a href="{% url 'home:userProfile' %}" class="button"
-                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;"><h6 class="heading"><strong>Profile</strong></h6></a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">
+                                    <h6 class="heading"><strong>Profile</strong></h6>
+                                </a>
                             </li>
                             <li><a href="{% url 'home:logout' %}" class="button"
-                                style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;"><h6 class="heading"><strong>LogOut</strong></h6></a>
+                                    style="font-weight: bold; font-size: medium; position: relative; right: 0.6cm;">
+                                    <h6 class="heading"><strong>LogOut</strong></h6>
+                                </a>
                             </li>
                             {% endif %}
                         </ul>
