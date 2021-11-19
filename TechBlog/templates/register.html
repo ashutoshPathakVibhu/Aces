@@ -6,10 +6,10 @@
 {% block content %}
 
 {% load static %}
-<div class="col-md-3 order-3 order-md-1">
+<div class="col-md-3 order-3 order-md-1" style="margin-top: .25cm;">
     <div class="custom-control custom-switch mr-5">
-        <input type="checkbox" class="custom-control-input" id="selector">
-        <label class="custom-control-label" for="selector">Dark Mode</label>
+        <a href="javascript:void()" class="btn btn-outline-info btn-lg ml-auto font-weight-bold"
+            id="theme-toggler" onclick="toggle()"></a>
     </div>
 </div>
 <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">

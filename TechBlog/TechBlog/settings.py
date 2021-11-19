@@ -141,7 +141,7 @@ LOGOUT_REDIRECT_URL='home:index'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CACHE_MIDDLEWARE_SECONDS = 40
+CACHE_MIDDLEWARE_SECONDS = 1
 CACHES = {
     'default': {
         'BACKEND' : 'django.core.cache.backends.db.DatabaseCache',

@@ -1,22 +1,18 @@
 // // you can use app's unique identifier here
-// const LOCAL_STORAGE_KEY = "toggle-bootstrap-theme";
+const LOCAL_STORAGE_KEY = "toggle-bootstrap-theme";
 
-// const LOCAL_META_DATA = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+const LOCAL_META_DATA = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 
-// // you can change this url as needed
-// const DARK_THEME_PATH = "https://bootswatch.com/4/cyborg/bootstrap.min.css";
+const THEME_TOGGLER = document.getElementById("theme-toggler");
 
-// const DARK_STYLE_LINK = document.getElementById("dark-theme-style");
-// const THEME_TOGGLER = document.getElementById("theme-toggler");
+let isDark = LOCAL_META_DATA && LOCAL_META_DATA.isDark;
 
-// let isDark = LOCAL_META_DATA && LOCAL_META_DATA.isDark;
-
-// // check if user has already selected dark theme earlier
-// if (isDark) {
-//   enableDarkTheme();
-// } else {
-//   disableDarkTheme();
-// }
+// check if user has already selected dark theme earlier
+if (isDark) {
+  enableDarkTheme();
+} else {
+  disableDarkTheme();
+}
 
 
 // /**
@@ -24,44 +20,115 @@
 //  * So when user visits next time, we can load the same theme.
 //  *
 //  */
-// function toggleTheme() {
-//   isDark = !isDark;
-//   if (isDark) {
-//     enableDarkTheme();
-//   } else {
-//     disableDarkTheme();
-//   }
-//   const META = { isDark };
-//   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(META));
-// }
+function toggle() {
+  isDark = !isDark;
+  if (isDark) {
+    enableDarkTheme();
+  } else {
+    disableDarkTheme();
+  }
+  const META = { isDark };
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(META));
+}
 
-// function enableDarkTheme() {
-//   DARK_STYLE_LINK.setAttribute("href", DARK_THEME_PATH);
-//   THEME_TOGGLER.innerHTML = "🌙 ";
-// }
+function enableDarkTheme() {
+  THEME_TOGGLER.innerHTML = "🌙 ";
+  let d=document.getElementsByTagName("div");
+  for(let i=0;i<d.length;i++){
+    d[i].classList.add("navbar-dark");
+    d[i].classList.add("bg-dark");
+  }
+  let b=document.getElementsByTagName("body");
+  for(let i=0;i<b.length;i++){
+    b[i].classList.add("navbar-dark");
+    b[i].classList.add("bg-dark");
+  }
+  let n=document.getElementsByTagName("nav");
+  for(let i=0;i<n.length;i++){
+    n[i].classList.add("navbar-dark");
+    n[i].classList.add("bg-dark");
+  }
+  let H2=document.getElementsByTagName("h2");
+  for(let i=0;i<H2.length;i++){
+    H2[i].classList.add("text-white");
+  }
+  let H4=document.getElementsByTagName("h4");
+  for(let i=0;i<H4.length;i++){
+    H4[i].classList.add("text-white");
+  }
+  let H6=document.getElementsByTagName("h6");
+  for(let i=0;i<H6.length;i++){
+    H6[i].classList.add("text-white");
+  }
+  let A=document.getElementsByTagName("a");
+  for(let i=0;i<A.length;i++){
+    A[i].classList.add("text-white");
+  }
+  let P=document.getElementsByTagName("p");
+  for(let i=0;i<P.length;i++){
+    P[i].classList.add("text-white");
+  }
+  let SPAN=document.getElementsByTagName("span");
+  for(let i=0;i<SPAN.length;i++){
+    SPAN[i].classList.add("text-white");
+  }
+  let STRONG=document.getElementsByTagName("strong");
+  for(let i=0;i<STRONG.length;i++){
+    STRONG[i].classList.add("text-white");
+  }
+  let SMALL=document.getElementsByTagName("small");
+  for(let i=0;i<SMALL.length;i++){
+    SMALL[i].classList.add("text-white");
+  }
+}
 
-// function disableDarkTheme() {
-//   DARK_STYLE_LINK.setAttribute("href", "");
-//   THEME_TOGGLER.innerHTML = "🌞 ";
-// }
-
-$(document).ready(function(){
-  $("#selector").change(function(){
-    $("body").toggleClass("navbar-dark bg-dark");
-    $("nav").toggleClass("navbar-dark bg-dark");
-    $(".custom-control-label").toggleClass("text-white");
-    $("h2").toggleClass("text-white");
-    $("h6").toggleClass("text-white");
-    $("h4").toggleClass("text-white");
-    $("div").toggleClass("bg-dark");
-    $("a").toggleClass("text-white");
-    $("p").toggleClass("text-white");
-    $("span").toggleClass("text-white");
-    $("strong").toggleClass("text-white");
-    $("small").toggleClass("text-white");
-    $(".card-title").toggleClass("text-white");
-    $(".card-text").toggleClass("text-white");
-    $(".container").toggleClass("text-white");
-    $(".fas").toggleClass("text-white");
-  });
-});
+function disableDarkTheme() {
+  THEME_TOGGLER.innerHTML = "🌞 ";
+  let d=document.getElementsByTagName("div");
+  for(let i=0;i<d.length;i++){
+    d[i].classList.remove("navbar-dark");
+    d[i].classList.remove("bg-dark");
+  }
+  let b=document.getElementsByTagName("body");
+  for(let i=0;i<b.length;i++){
+    b[i].classList.remove("navbar-dark");
+    b[i].classList.remove("bg-dark");
+  }
+  let n=document.getElementsByTagName("nav");
+  for(let i=0;i<n.length;i++){
+    n[i].classList.remove("navbar-dark");
+    n[i].classList.remove("bg-dark");
+  }
+  let H2=document.getElementsByTagName("h2");
+  for(let i=0;i<H2.length;i++){
+    H2[i].classList.remove("text-white");
+  }
+  let H4=document.getElementsByTagName("h4");
+  for(let i=0;i<H4.length;i++){
+    H4[i].classList.remove("text-white");
+  }
+  let H6=document.getElementsByTagName("h6");
+  for(let i=0;i<H6.length;i++){
+    H6[i].classList.remove("text-white");
+  }
+  let A=document.getElementsByTagName("a");
+  for(let i=0;i<A.length;i++){
+    A[i].classList.remove("text-white");
+  }
+  let P=document.getElementsByTagName("p");
+  for(let i=0;i<P.length;i++){
+    P[i].classList.remove("text-white");
+  }
+  let SPAN=document.getElementsByTagName("span");
+  for(let i=0;i<SPAN.length;i++){
+    SPAN[i].classList.remove("text-white");
+  }
+  let STRONG=document.getElementsByTagName("strong");
+  for(let i=0;i<STRONG.length;i++){
+    STRONG[i].classList.remove("text-white");
+  }
+  let SMALL=document.getElementsByTagName("small");
+  for(let i=0;i<SMALL.length;i++){
+    SMALL[i].classList.remove("text-white");
+  }
+}
