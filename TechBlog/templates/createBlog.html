@@ -33,21 +33,21 @@
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label>Title*</label>
+                    <label><h6>Title*</h6></label>
                     {{form.title}}
                 </div>
                 <div class="form-group">
-                    <label>Blog Image : </label>
+                    <label><h6>Blog Image : </h6></label>
                     {{form.image}}
                 </div>
                 <div class="form-group">
-                    <label>Content*<div class="text-muted">
+                    <label><h6>Content*</h6><div class="text-muted">
                             (Please write 2-3 lines of unformatted introductory paragraph in the beginning)
                         </div></label>
                     {{form.content}}
                 </div>
                 <div class="form-group">
-                    <label>Tags*<div class="text-muted">
+                    <label><h6>Tags*</h6><div class="text-muted">
                             (Seperated by Commas)
                         </div></label>
                     {{form.tags}}

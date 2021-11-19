@@ -1,6 +1,6 @@
 <div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close" >
+        <div class="site-mobile-menu-close">
             <span class="icofont-close js-menu-toggle"></span>
         </div>
     </div>
@@ -11,12 +11,13 @@
         <div class="site-navigation">
             <div class="row" style="position: relative; top: -.4cm;">
                 <div class="col-md-6 text-center order-1 order-md-2 mb-3 mb-md-0">
-                    <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase" style="font-weight: bold; font-size: large;"><strong>TECH BLOG</strong></a>
+                    <a href="{% url 'home:index' %}" class="logo m-0 text-uppercase"
+                        style="font-weight: bold; font-size: large;"><strong>TECH BLOG</strong></a>
                 </div>
                 <div class="col-md-3 order-3 order-md-1" style="margin-top: .25cm;">
                     <div class="custom-control custom-switch mr-5">
-                        <input type="checkbox" class="custom-control-input" id="selector">
-                        <label class="custom-control-label" for="selector"><strong>Dark Mode</strong></label>
+                        <a href="javascript:void()" class="btn btn-outline-info btn-lg ml-auto font-weight-bold" style="box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                        border-radius: 2px;" id="theme-toggler" onclick="toggle()"></a>
                     </div>
                 </div>
                 <div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
