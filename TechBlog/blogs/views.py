@@ -134,7 +134,7 @@ def sharedPage(request, key):
 def createShare(request, pk):
     task = Post.objects.get(pk=pk)
     try:
-        key = task.sharekey
+        key = task.sharelink
         key.delete()
         key = ShareKey.objects.create(blog=task,pk=get_random_string(40),
                                       expiration_seconds=60*60*24, # 1 day
